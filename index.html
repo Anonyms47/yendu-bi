@@ -1226,11 +1226,16 @@ var INFRA = [
 
 var PROGRAMME = [
   {h:'8h',    t:'Départ'},
-  {h:'11h',   t:'Collation'},
+  {h:'11h',   t:'Collation', d:'Le menu de votre choix sélectionné à l\'inscription (voir ci-dessous).'},
   {h:'12h',   t:'Atelier peinture'},
   {h:'13h30', t:"Cercle d'anecdotes"},
-  {h:'15h',   t:'Déjeuner'},
-  {h:'16h',   t:'Compétition'},
+  {h:'15h',   t:'Déjeuner', d:'Thieb yapp guinar · Dessert · Eau · Jus'},
+  {h:'16h',   t:'Compétition', games:[
+    {n:'Qui suis-je ?',     d:'Un post-it sur le front avec un nom de célébrité — tu dois deviner qui tu es en posant des questions auxquelles on répond seulement par oui ou non.'},
+    {n:'Téléphone arabe',   d:'Un message secret passe de bouche en oreille tout au long de la chaîne — le dernier répète ce qu\'il a entendu… souvent très loin de l\'original !'},
+    {n:'Chaise musicale',   d:'La musique s\'arrête, tout le monde se bat pour une chaise — celui qui reste debout est éliminé, une chaise disparaît à chaque tour.'},
+    {n:'Quizz',             d:'Questions de culture générale, histoire, sport et musique — le plus rapide et le plus précis remporte la victoire.'},
+  ]},
   {h:'17h30', t:'Prestation talents'},
   {h:'18h30', t:'Activités de clôture'},
 ];
@@ -1303,6 +1308,33 @@ var PROGRAMME = [
 
     card.appendChild(time);
     card.appendChild(title);
+
+    if (item.d) {
+      var desc = document.createElement('p');
+      desc.className = 'text-sm text-ink/60 mt-1 leading-snug';
+      desc.textContent = item.d;
+      card.appendChild(desc);
+    }
+
+    if (item.games) {
+      var gameList = document.createElement('ul');
+      gameList.className = 'mt-2 space-y-1.5';
+      item.games.forEach(function(g) {
+        var gItem = document.createElement('li');
+        gItem.className = 'text-sm leading-snug';
+        var gName = document.createElement('span');
+        gName.className = 'font-semibold text-ink/80';
+        gName.textContent = g.n + ' — ';
+        var gDesc = document.createElement('span');
+        gDesc.className = 'text-ink/55';
+        gDesc.textContent = g.d;
+        gItem.appendChild(gName);
+        gItem.appendChild(gDesc);
+        gameList.appendChild(gItem);
+      });
+      card.appendChild(gameList);
+    }
+
     li.appendChild(col);
     li.appendChild(card);
     list.appendChild(li);
