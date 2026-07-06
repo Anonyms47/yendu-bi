@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Yendu des Gestionnaires — 18 Juillet 2026 · Yendu Bi</title>
+<meta name="description" content="Une journée entière entre gestionnaires le 18 juillet 2026 à Yendu Bi : sport, gastronomie, talents et souvenirs inoubliables. Inscrivez-vous dès maintenant.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="event">
+<meta property="og:title" content="Yendu des Gestionnaires — 18 Juillet 2026">
+<meta property="og:description" content="Sport, gastronomie, talents et souvenirs inoubliables. Rejoignez-nous le 18 juillet à Yendu Bi.">
+<meta property="og:image" content="poster.jpg">
+<meta property="og:image:alt" content="Affiche officielle — Yendu des Gestionnaires, 18 juillet, Yendu Bi">
+<meta property="og:locale" content="fr_SN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yendu des Gestionnaires — 18 Juillet 2026">
+<meta name="twitter:description" content="Sport, gastronomie et souvenirs. Le 18 juillet à Yendu Bi — inscrivez-vous !">
+<meta name="twitter:image" content="poster.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#221510',
+          linen:  '#EFE6D2',
+          linen2: '#E4D7B8',
+          rouge:  '#8C2F26',
+          rouge2: '#6E241D',
+          or:     '#D9A441',
+          foret:  '#2F4D3A',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          script:  ['Caveat', 'cursive'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+/* ─────────────────────────────────────────
+   BASE
+───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background-color: #EFE6D2; font-family: 'Inter', sans-serif; }
+::selection { background: #D9A441; color: #221510; }
+
+/* ─────────────────────────────────────────
+   SKIP LINK (accessibilité clavier)
+───────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .5rem 1.5rem;
+  background: #221510;
+  color: #EFE6D2;
+  font-weight: 700;
+  font-size: .875rem;
+  border-radius: 0 0 .75rem .75rem;
+  z-index: 9999;
+  transition: top .2s ease;
+  white-space: nowrap;
+}
+.skip-link:focus { top: 0; }
+
+/* ─────────────────────────────────────────
+   FOCUS RING
+───────────────────────────────────────── */
+.focus-ring:focus-visible {
+  outline: 3px solid #D9A441;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────
+   GRAIN TEXTURE (subtil)
+───────────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: .028;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────
+   WOVEN BASKET DIVIDER
+───────────────────────────────────────── */
+.weave-divider {
+  height: 22px;
+  width: 100%;
+  background-image:
+    linear-gradient(135deg, #8C2F26 25%, transparent 25%),
+    linear-gradient(225deg, #8C2F26 25%, transparent 25%),
+    linear-gradient(45deg,  #D9A441 25%, transparent 25%),
+    linear-gradient(315deg, #D9A441 25%, transparent 25%);
+  background-position: 11px 0, 11px 0, 0 0, 0 0;
+  background-size: 22px 22px;
+  background-repeat: repeat-x;
+  opacity: .88;
+}
+
+/* ─────────────────────────────────────────
+   TICKET CUTOUTS
+───────────────────────────────────────── */
+.ticket { position: relative; }
+.ticket::before, .ticket::after {
+  content: '';
+  position: absolute;
+  width: 22px; height: 22px;
+  background: #EFE6D2;
+  border-radius: 50%;
+  top: 50%; transform: translateY(-50%);
+}
+.ticket::before { left: -11px; }
+.ticket::after  { right: -11px; }
+
+/* ─────────────────────────────────────────
+   SKELETON SHIMMER
+───────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(110deg, #E4D7B8 8%, #f0e6d2 18%, #E4D7B8 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+@keyframes shimmer { to { background-position-x: -200%; } }
+
+/* ─────────────────────────────────────────
+   CARD LIFT HOVER
+───────────────────────────────────────── */
+.card-lift {
+  transition: transform .28s cubic-bezier(.23,1,.32,1),
+              box-shadow .28s cubic-bezier(.23,1,.32,1);
+}
+.card-lift:hover {
+  transform: translateY(-7px) rotate(-0.4deg);
+  box-shadow: 0 22px 38px -10px rgba(34,21,16,.22), 0 6px 14px -6px rgba(34,21,16,.12);
+}
+
+/* ─────────────────────────────────────────
+   TIMELINE DASHED LINE
+───────────────────────────────────────── */
+.timeline-line {
+  background: repeating-linear-gradient(
+    to bottom, #8C2F26 0, #8C2F26 7px, transparent 7px, transparent 15px
+  );
+}
+
+/* ─────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .65s cubic-bezier(.23,1,.32,1),
+              transform .65s cubic-bezier(.23,1,.32,1);
+}
+.fade-up.in { opacity: 1; transform: translateY(0); }
+.fade-up[data-delay="1"] { transition-delay: .08s; }
+.fade-up[data-delay="2"] { transition-delay: .16s; }
+.fade-up[data-delay="3"] { transition-delay: .24s; }
+.fade-up[data-delay="4"] { transition-delay: .32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; transform: none; transition: none; }
+  .skeleton { animation: none; }
+  .card-lift { transition: none; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ─────────────────────────────────────────
+   FORM INPUT
+───────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  border-radius: .875rem;
+  border: 2px solid rgba(34,21,16,.15);
+  padding: .9rem 1.125rem;
+  background: rgba(255,255,255,.6);
+  font-family: 'Inter', sans-serif;
+  font-size: .9375rem;
+  color: #221510;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-input:hover { border-color: rgba(34,21,16,.3); }
+.form-input:focus {
+  border-color: #8C2F26;
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 0 0 4px rgba(140,47,38,.09);
+}
+.form-input::placeholder { color: rgba(34,21,16,.38); }
+.form-input:invalid:not(:placeholder-shown) { border-color: #8C2F26; }
+
+input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
+
+/* ─────────────────────────────────────────
+   NAV UNDERLINE HOVER
+───────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0; height: 2px;
+  background: #8C2F26;
+  border-radius: 2px;
+  transition: width .28s cubic-bezier(.23,1,.32,1);
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ─────────────────────────────────────────
+   HERO RADIAL GLOW
+───────────────────────────────────────── */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(217,164,65,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 15% 85%, rgba(140,47,38,.055) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+   COUNTDOWN BLOCKS
+───────────────────────────────────────── */
+.cd-block {
+  position: relative;
+  overflow: hidden;
+  background: #221510;
+  color: #EFE6D2;
+  border-radius: 1rem;
+  padding: .875rem 1.125rem;
+  text-align: center;
+  min-width: 72px;
+}
+.cd-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(217,164,65,.18) 0%, transparent 55%);
+}
+.cd-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 2.1rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -.02em;
+}
+.cd-label {
+  font-size: .58rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  opacity: .55;
+  margin-top: .25rem;
+  position: relative;
+  z-index: 1;
+}
+.cd-sep {
+  font-family: 'Fraunces', serif;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #D9A441;
+  align-self: center;
+  line-height: 1;
+  margin-top: -.25rem;
+  user-select: none;
+}
+.cd-sep-blink {
+  animation: sep-blink 1s step-start infinite;
+}
+@keyframes sep-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100%{ opacity: .22; }
+}
+@keyframes sec-flip {
+  0%  { transform: scaleY(1);   opacity: 1;  }
+  18% { transform: scaleY(.72); opacity: .55;}
+  36% { transform: scaleY(1);   opacity: 1;  }
+}
+.sec-flip { animation: sec-flip .38s cubic-bezier(.4,0,.2,1); }
+
+/* ─────────────────────────────────────────
+   INFO BADGE
+───────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  padding: .3rem .8rem;
+  border-radius: 9999px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   PROGRAMME DOT
+───────────────────────────────────────── */
+.prog-dot {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: #8C2F26;
+  color: #EFE6D2;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: .68rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.15;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(140,47,38,.38);
+}
+
+/* ─────────────────────────────────────────
+   INFRA ICON BOX
+───────────────────────────────────────── */
+.infra-icon {
+  width: 46px; height: 46px;
+  border-radius: .875rem;
+  background: rgba(217,164,65,.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto .75rem;
+  font-size: 1.5rem;
+  transition: background .22s, transform .22s;
+}
+.card-lift:hover .infra-icon {
+  background: rgba(217,164,65,.28);
+  transform: scale(1.08);
+}
+
+/* ─────────────────────────────────────────
+   SUBMIT BUTTON
+───────────────────────────────────────── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  width: 100%;
+  background: #221510;
+  color: #EFE6D2;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  padding: 1.1rem 2rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background .25s, transform .22s, box-shadow .25s;
+  box-shadow: 0 4px 22px rgba(34,21,16,.28);
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.08) 0%, transparent 55%);
+}
+.btn-primary:hover:not(:disabled) {
+  background: #8C2F26;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(140,47,38,.38);
+}
+.btn-primary:active:not(:disabled) { transform: translateY(0); }
+.btn-primary:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER LAYOUT
+───────────────────────────────────────── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 640px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+}
+
+/* ─────────────────────────────────────────
+   PULSE DOT (event badge)
+───────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(.85); }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* ── Sélecteur de classe ── */
+.classe-tab {
+  padding: .4rem .95rem;
+  border-radius: 9999px;
+  font-size: .8rem;
+  font-weight: 700;
+  border: 2px solid rgba(34,21,16,.15);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .18s, background .18s, color .18s;
+  color: rgba(34,21,16,.6);
+  font-family: inherit;
+}
+.classe-tab:hover { border-color: rgba(140,47,38,.45); color: #8C2F26; background: rgba(140,47,38,.06); }
+.classe-tab.active { border-color: #8C2F26; background: #8C2F26; color: #EFE6D2; }
+.classe-tab:focus-visible { outline: 2px solid #8C2F26; outline-offset: 2px; }
+
+/* ── Items de la liste de noms ── */
+.name-item {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .75rem; padding: .6rem 1rem;
+  font-size: .875rem; font-weight: 500;
+  width: 100%; text-align: left;
+  background: transparent; border: 0;
+  cursor: pointer;
+  transition: background .15s;
+}
+.name-item:hover, .name-item:focus-visible { background: rgba(140,47,38,.06); outline: none; }
+.name-item:focus-visible { box-shadow: inset 0 0 0 2px #8C2F26; }
+</style>
+</head>
+<body class="font-body text-ink antialiased">
+
+<!-- Skip to content -->
+<a href="#inscription" class="skip-link">Aller au formulaire d'inscription</a>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="bg-linen/92 backdrop-blur-md border-b border-ink/10 shadow-sm">
+    <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between gap-4">
+
+      <a href="#accueil"
+         class="font-script text-2xl text-rouge leading-none flex-shrink-0 focus-ring"
+         aria-label="Yendu des Gestionnaires — retour à l'accueil">
+        Yendu des Gestionnaires
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide"
+           aria-label="Navigation principale">
+        <a href="#lieu"        class="nav-link hover:text-rouge transition-colors focus-ring">Le lieu</a>
+        <a href="#programme"   class="nav-link hover:text-rouge transition-colors focus-ring">Programme</a>
+        <a href="#inscription" class="nav-link hover:text-rouge transition-colors focus-ring">Inscription</a>
+      </nav>
+
+      <a href="#inscription"
+         class="bg-rouge text-linen px-5 py-2.5 rounded-full text-sm font-bold
+                hover:bg-rouge2 hover:-translate-y-0.5 hover:shadow-lg
+                transition-all focus-ring">
+        S'inscrire
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section id="accueil" class="relative pt-28 pb-20 px-5 max-w-6xl mx-auto overflow-hidden">
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+
+    <!-- Colonne gauche -->
+    <div>
+      <div class="fade-up mb-5">
+        <span class="badge bg-or/20 text-ink border border-or/30">
+          <span class="pulse-dot w-1.5 h-1.5 rounded-full bg-rouge inline-block flex-shrink-0" aria-hidden="true"></span>
+          18 Juillet 2026 · Yendu Bi
+        </span>
+      </div>
+
+      <div class="fade-up" data-delay="1">
+        <p class="font-script text-3xl text-or -mb-1 rotate-[-2deg] inline-block drop-shadow-sm">
+          Ensemble, encore une fois
+        </p>
+        <h1 class="font-display font-black text-[3.25rem] sm:text-[4rem] lg:text-[4.625rem]
+                   leading-[0.9] tracking-tight mt-3 mb-6">
+          Le&nbsp;Yendu<br>des<br>
+          <em class="not-italic text-rouge">Gestionnaires</em>
+        </h1>
+      </div>
+
+      <div class="fade-up space-y-1 mb-8" data-delay="2">
+        <p class="text-lg text-ink/80 max-w-sm leading-relaxed">
+          Une journée entière, du matin jusqu'au soir&nbsp;—<br>sport, gastronomie, talents et souvenirs.
+        </p>
+        <p class="font-script text-2xl text-rouge pt-1">Écrivons ensemble de nouveaux souvenirs.</p>
+      </div>
+
+      <!-- Countdown -->
+      <div class="fade-up mb-9" data-delay="3">
+        <p class="text-[.65rem] font-bold uppercase tracking-widest text-ink/45 mb-2.5">
+          Compte à rebours
+        </p>
+        <div class="flex items-center gap-1.5"
+             id="countdown"
+             role="timer"
+             aria-label="Temps restant avant le Yendu des Gestionnaires"
+             aria-live="polite"
+             aria-atomic="true">
+          <div class="cd-block">
+            <div class="cd-num" id="cd-days" aria-label="jours">--</div>
+            <div class="cd-label" aria-hidden="true">jours</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-hours" aria-label="heures">--</div>
+            <div class="cd-label" aria-hidden="true">heures</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-min" aria-label="minutes">--</div>
+            <div class="cd-label" aria-hidden="true">min</div>
+          </div>
+          <div class="cd-sep cd-sep-blink" aria-hidden="true">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-sec" aria-label="secondes">--</div>
+            <div class="cd-label" aria-hidden="true">sec</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="fade-up flex flex-wrap gap-3 mb-6" data-delay="4">
+        <a href="#inscription"
+           class="inline-flex items-center gap-2 bg-rouge text-linen px-7 py-4 rounded-full
+                  font-bold hover:bg-rouge2 hover:-translate-y-0.5 hover:shadow-xl
+                  transition-all focus-ring">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+          Je m'inscris
+        </a>
+        <a href="#programme"
+           class="inline-flex items-center gap-2 border-2 border-ink px-7 py-4 rounded-full
+                  font-bold hover:bg-ink hover:text-linen transition-all focus-ring">
+          Voir le programme
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Info pills -->
+      <div class="fade-up flex flex-wrap gap-2" data-delay="4">
+        <span class="badge bg-ink/10 text-ink/65 border border-ink/10">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+          8h — 18h30
+        </span>
+        <span class="badge bg-ink/10 text-ink/65 border border-ink/10">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          Yendu Bi
+        </span>
+        <span class="badge bg-rouge/10 text-rouge border border-rouge/20">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          10 000 F CFA
+        </span>
+      </div>
+    </div>
+
+    <!-- Colonne droite : affiche -->
+    <div class="fade-up relative flex items-center justify-center" data-delay="2">
+      <div class="absolute -inset-4 border-2 border-or/50 rounded-[2rem] rotate-2 opacity-75"></div>
+      <div class="absolute -inset-8 border border-or/18 rounded-[2.5rem] -rotate-1"></div>
+      <img
+        src="poster.jpg"
+        alt="Affiche officielle — Yendu des Gestionnaires, 18 juillet 2026, Yendu Bi"
+        class="relative rounded-[1.75rem] shadow-2xl w-full object-cover -rotate-1"
+        loading="eager"
+        width="600" height="800">
+    </div>
+  </div>
+
+  <!-- Teaser vidéo -->
+  <div class="fade-up mt-16 max-w-3xl mx-auto" data-delay="3">
+    <p class="text-center font-script text-2xl text-rouge mb-4">
+      Le teaser officiel arrive bientôt&hellip;
+    </p>
+    <div class="relative rounded-2xl overflow-hidden aspect-video skeleton border border-ink/10 shadow-lg"
+         role="img"
+         aria-label="Emplacement de la vidéo teaser — en cours de montage">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center px-6">
+          <div class="w-16 h-16 rounded-full bg-ink/80 text-linen flex items-center justify-center mx-auto mb-3 shadow-xl"
+               aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="text-ink/60 font-semibold text-sm">Vidéo en cours de montage — publication imminente</p>
+        </div>
+      </div>
+    </div>
+    <!-- Quand la vidéo est prête, remplacer le div .skeleton par :
+    <video controls poster="poster.jpg" class="w-full rounded-2xl shadow-lg" preload="none">
+      <source src="teaser.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la balise vidéo.
+    </video> -->
+  </div>
+</section>
+
+<div class="weave-divider" aria-hidden="true"></div>
+
+
+<!-- ════════════════════════════════════════
+     LE LIEU
+════════════════════════════════════════ -->
+<section id="lieu" class="py-20 px-5 max-w-6xl mx-auto">
+
+  <div class="fade-up text-center max-w-xl mx-auto mb-14">
+    <p class="font-script text-2xl text-or mb-2">Bienvenue à</p>
+    <h2 class="font-display font-black text-4xl sm:text-5xl mb-4">Yendu Bi</h2>
+    <p class="text-ink/70 leading-relaxed">
+      Un site hyper-équipé, pensé pour le sport, le jeu et les rires&nbsp;—&nbsp;pour petits et grands.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14"
+       id="infra-grid"
+       role="list"
+       aria-label="Infrastructures disponibles à Yendu Bi"></div>
+
+  <div class="fade-up">
+    <div class="rounded-3xl overflow-hidden border border-ink/10 shadow-xl">
+      <iframe
+        title="Localisation de Yendu Bi sur Google Maps"
+        src="https://www.google.com/maps?q=14.7571285,-17.3084329&hl=fr&z=16&output=embed"
+        class="w-full h-72 sm:h-96"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Carte interactive — Yendu Bi, Sénégal">
+      </iframe>
+    </div>
+    <div class="text-center mt-5">
+      <a href="https://maps.app.goo.gl/uSasqHsUVyrgYrqD8"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-ink text-linen px-6 py-3 rounded-full text-sm
+                font-bold hover:bg-rouge hover:-translate-y-0.5 hover:shadow-lg
+                transition-all focus-ring"
+         aria-label="Ouvrir l'itinéraire vers Yendu Bi dans Google Maps — nouvelle fenêtre">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        Itinéraire vers Yendu Bi
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+          <path d="M7 17 17 7M9 7h8v8"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="weave-divider" aria-hidden="true"></div>
+
+
+<!-- ════════════════════════════════════════
+     PROGRAMME
+════════════════════════════════════════ -->
+<section id="programme" class="py-20 px-5 max-w-2xl mx-auto">
+
+  <div class="fade-up text-center mb-14">
+    <p class="font-script text-2xl text-or mb-2">De 8h à 18h30</p>
+    <h2 class="font-display font-black text-4xl sm:text-5xl">Chronogramme</h2>
+    <p class="mt-3 text-ink/55 text-sm">Une journée bien remplie, du départ jusqu'à la clôture.</p>
+  </div>
+
+  <ol class="space-y-1" id="timeline" aria-label="Programme de la journée du 18 juillet 2026"></ol>
+</section>
+
+<div class="weave-divider" aria-hidden="true"></div>
+
+
+<!-- ════════════════════════════════════════
+     INSCRIPTION
+════════════════════════════════════════ -->
+<section id="inscription" class="py-20 px-5 max-w-2xl mx-auto">
+
+  <div class="fade-up text-center mb-12">
+    <p class="font-script text-2xl text-or mb-2">Cotisation : 10 000 F CFA</p>
+    <h2 class="font-display font-black text-4xl sm:text-5xl">Je m'inscris</h2>
+    <p class="mt-4 text-ink/65 text-sm max-w-sm mx-auto leading-relaxed">
+      5 000 F pour l'entrée + jeu &amp; 5 000 F pour le déjeuner commun.
+    </p>
+  </div>
+
+  <!-- Notification brouillon -->
+  <div id="draftNotice"
+       class="hidden fade-up mb-7 bg-or/15 border border-or/40 rounded-2xl px-5 py-3.5
+              flex items-center justify-between gap-3">
+    <p class="text-sm font-semibold flex items-center gap-2">
+      <svg class="flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/>
+      </svg>
+      Brouillon restauré — vos informations ont été récupérées.
+    </p>
+    <button type="button" onclick="clearDraft()"
+            class="text-xs underline font-semibold text-ink/55 hover:text-rouge flex-shrink-0 focus-ring">
+      Effacer
+    </button>
+  </div>
+
+  <form id="regForm" class="space-y-7" novalidate
+        aria-label="Formulaire d'inscription au Yendu des Gestionnaires">
+
+    <!-- ── 1. Identité — sélecteur classe + picker ── -->
+    <fieldset class="fade-up">
+      <legend class="font-display font-bold text-xl mb-4 flex items-center gap-2.5">
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rouge text-linen text-xs font-bold" aria-hidden="true">1</span>
+        Votre identité
+      </legend>
+
+      <!-- Sélecteur de classe -->
+      <div class="mb-5">
+        <p class="text-sm font-semibold mb-3" style="color:rgba(34,21,16,.55)">Votre classe</p>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Sélectionnez votre classe">
+          <button type="button" class="classe-tab" data-classe="DUT 1">DUT 1</button>
+          <button type="button" class="classe-tab" data-classe="DUT 2">DUT 2</button>
+          <button type="button" class="classe-tab" data-classe="MAME 1">MAME 1</button>
+          <button type="button" class="classe-tab" data-classe="MAME 2">MAME 2</button>
+          <button type="button" class="classe-tab" data-classe="MAME 3">MAME 3</button>
+          <button type="button" class="classe-tab" data-classe="ALUMNI">ALUMNI</button>
+        </div>
+      </div>
+
+      <!-- Picker — DUT / MAME (liste intelligente) -->
+      <div id="pickerBlock" class="hidden space-y-2 mb-5">
+        <div class="relative">
+          <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+               width="15" height="15" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5"
+               style="color:rgba(34,21,16,.35)" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="nameSearch"
+                 placeholder="Tapez votre nom pour filtrer…"
+                 autocomplete="off" spellcheck="false"
+                 aria-label="Rechercher votre nom dans la liste de la classe"
+                 aria-controls="nameList"
+                 class="form-input focus-ring" style="padding-left:2.6rem;">
+        </div>
+        <div id="nameList"
+             class="max-h-56 overflow-y-auto rounded-xl border border-ink/10 divide-y divide-ink/5 bg-white/50"
+             role="listbox" aria-label="Liste des noms de la classe">
+        </div>
+        <!-- Nom sélectionné -->
+        <div id="selectedNameCard"
+             class="hidden flex items-center gap-3 px-4 py-3 rounded-xl border-2"
+             style="background:rgba(47,77,58,.08);border-color:rgba(47,77,58,.25);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+               stroke="#2F4D3A" stroke-width="2.5" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span class="flex-1 font-bold text-sm text-ink" id="selectedNameText"></span>
+          <button type="button" id="clearNameSelection"
+                  class="text-xs font-semibold underline focus-ring"
+                  style="color:rgba(34,21,16,.45)">Changer</button>
+        </div>
+      </div>
+
+      <!-- Nom + Prénom — dans le DOM en permanence (visibles pour ALUMNI, cachés sinon) -->
+      <div id="nomPrenomFields" class="hidden grid sm:grid-cols-2 gap-4 mb-5">
+        <div>
+          <label class="block text-sm font-bold mb-2" for="nom">
+            Nom <span class="text-rouge" aria-hidden="true">*</span>
+          </label>
+          <input id="nom" name="nom" type="text"
+                 autocomplete="family-name" placeholder="Votre nom de famille"
+                 class="form-input focus-ring">
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2" for="prenom">
+            Prénom <span class="text-rouge" aria-hidden="true">*</span>
+          </label>
+          <input id="prenom" name="prenom" type="text"
+                 autocomplete="given-name" placeholder="Votre prénom"
+                 class="form-input focus-ring">
+        </div>
+      </div>
+
+      <!-- WhatsApp -->
+      <div>
+        <label class="block text-sm font-bold mb-2" for="whatsapp">
+          Numéro WhatsApp <span class="text-rouge" aria-hidden="true">*</span>
+        </label>
+        <input required id="whatsapp" name="whatsapp" type="tel"
+               autocomplete="tel" placeholder="77 000 00 00"
+               class="form-input focus-ring">
+        <p class="text-xs text-ink/48 mt-2">Nous vous contacterons via ce numéro pour la confirmation.</p>
+      </div>
+    </fieldset>
+
+    <!-- ── BANNER DE STATUT (masqué par défaut, affiché après vérification) ── -->
+    <div id="statusBanner" class="hidden" role="status" aria-live="polite">
+
+      <!-- Vérification en cours -->
+      <div id="statusChecking" class="hidden flex items-center gap-3 px-5 py-4 rounded-2xl
+           bg-ink/5 border border-ink/10 text-sm font-semibold text-ink/60">
+        <svg class="animate-spin flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+        </svg>
+        Vérification en cours…
+      </div>
+
+      <!-- Inscription COMPLÈTE -->
+      <div id="statusComplet" class="hidden rounded-2xl p-6 border-2"
+           style="background:rgba(47,77,58,.1);border-color:rgba(47,77,58,.3);">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+               style="background:rgba(47,77,58,.15);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F4D3A" stroke-width="2.5" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display font-bold text-lg" style="color:#2F4D3A;">
+              Inscription déjà complète !
+            </p>
+            <p class="text-sm mt-1 leading-relaxed" style="color:#2F4D3A;opacity:.8;">
+              Votre cotisation de 10 000 F CFA a bien été enregistrée. On vous retrouve le <strong>18 juillet</strong> à Yendu Bi — préparez-vous !
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solde PARTIEL restant -->
+      <div id="statusPartiel" class="hidden rounded-2xl p-6 border-2"
+           style="background:rgba(217,164,65,.1);border-color:rgba(217,164,65,.4);">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+               style="background:rgba(217,164,65,.2);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a6020" stroke-width="2.5" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <p class="font-display font-bold text-lg text-ink">Solde en attente</p>
+            <p class="text-sm mt-1 leading-relaxed text-ink/70">
+              Vous avez déjà versé <strong id="montantDejaVerse">—</strong> F CFA.
+              Il vous reste <strong id="soldeRestant" class="text-rouge">—</strong> F CFA à régler pour compléter votre inscription.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         CORPS DU FORMULAIRE (masqué si complet)
+    ══════════════════════════════════════════ -->
+    <div id="formBody" class="space-y-7">
+
+      <!-- ── Profil (visible uniquement si état = 'nouveau' | 'idle') ── -->
+      <div id="profilSection" class="fade-up">
+        <p class="font-display font-bold text-xl mb-4 flex items-center gap-2.5">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rouge text-linen text-xs font-bold" aria-hidden="true">2</span>
+          Votre profil
+        </p>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <label class="ticket border-2 border-ink/15 rounded-xl p-5 cursor-pointer bg-white/40
+                        has-[:checked]:border-rouge has-[:checked]:bg-rouge/8
+                        transition-all hover:border-rouge/35 hover:bg-white/60">
+            <input type="radio" name="profil" value="nouveau" class="sr-only" checked>
+            <span class="block font-bold mb-1">Nouvelle inscription</span>
+            <span class="block text-xs text-ink/55 leading-relaxed">Je n'ai encore rien versé</span>
+          </label>
+          <label class="ticket border-2 border-ink/15 rounded-xl p-5 cursor-pointer bg-white/40
+                        has-[:checked]:border-rouge has-[:checked]:bg-rouge/8
+                        transition-all hover:border-rouge/35 hover:bg-white/60">
+            <input type="radio" name="profil" value="ancien" class="sr-only">
+            <span class="block font-bold mb-1">J'ai déjà cotisé</span>
+            <span class="block text-xs text-ink/55 leading-relaxed">Acompte ou total déjà versé</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ── Bloc ANCIEN — versement précédent ── -->
+      <div id="blocAncien"
+           class="hidden fade-up bg-foret/6 border-2 border-foret/25 rounded-2xl p-6 space-y-5">
+        <h3 class="font-display font-bold text-xl">Votre versement précédent</h3>
+        <div>
+          <label class="block text-sm font-bold mb-2" for="montantVerse">
+            Montant déjà versé (F CFA) <span class="text-rouge" aria-hidden="true">*</span>
+          </label>
+          <input id="montantVerse" name="montantVerse" type="number"
+                 min="0" max="10000" step="500" placeholder="ex : 5000"
+                 class="form-input focus-ring" aria-describedby="resteInfo">
+        </div>
+        <div id="resteInfo"
+             class="bg-white/70 rounded-xl px-5 py-4 border border-foret/20 flex justify-between items-center">
+          <span class="text-sm font-semibold text-ink/65">Reste à payer :</span>
+          <span class="font-display font-black text-xl text-foret" id="resteAffiche">10 000 F CFA</span>
+        </div>
+        <div id="reliquatInfo"
+             class="hidden text-sm bg-or/15 border border-or/40 rounded-xl px-4 py-3 leading-relaxed">
+          Merci de solder le reliquat via <strong>Wave</strong> avant le jour J.
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2" for="preuveAncien">
+            À qui / comment l'argent a été remis <span class="text-rouge" aria-hidden="true">*</span>
+          </label>
+          <input id="preuveAncien" name="preuveAncien" type="text"
+                 placeholder="Nom du membre de la commission ou code du transfert"
+                 class="form-input focus-ring">
+        </div>
+      </div>
+
+      <!-- ── Menu ── -->
+      <fieldset class="fade-up">
+        <legend class="font-display font-bold text-xl mb-1 flex items-center gap-2.5">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rouge text-linen text-xs font-bold" aria-hidden="true" id="menuStepNum">3</span>
+          Votre menu
+        </legend>
+        <p class="text-xs text-ink/50 ml-9 mb-5">
+          Composez votre repas pour une valeur exacte de <strong>5 000 F</strong>.
+        </p>
+        <div id="menuBuilder" class="space-y-5"></div>
+        <div class="mt-5">
+          <div id="totalBox"
+               class="flex items-center justify-between rounded-2xl px-5 py-4 border-2 font-bold
+                      bg-white shadow-md transition-all duration-300">
+            <span class="text-sm font-bold">Total commande</span>
+            <span id="totalAffiche" class="font-display text-2xl">0 F</span>
+          </div>
+          <p id="totalMsg" class="text-sm mt-2.5 text-rouge font-semibold min-h-[1.25rem]"
+             role="alert" aria-live="polite"></p>
+        </div>
+      </fieldset>
+
+      <!-- ── Bloc Paiement (nouveau) ── -->
+      <div id="blocNouveau"
+           class="fade-up bg-rouge/5 border-2 border-rouge/25 rounded-2xl p-6 space-y-5">
+        <h3 class="font-display font-bold text-xl flex items-center gap-2.5">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rouge text-linen text-xs font-bold" aria-hidden="true" id="paiementStepNum">4</span>
+          <span id="paiementTitle">Paiement — 10 000 F CFA</span>
+        </h3>
+        <div id="paiementInstructions" class="space-y-3">
+          <p class="text-sm text-ink/65">Payez <strong class="text-ink">10 000 F CFA</strong> via l'un des moyens suivants :</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <a href="https://pay.wave.com/m/M_sn_zV5zLviK9q38/c/sn/" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 transition-all focus-ring no-underline"
+               style="border-color:rgba(29,198,245,.3);background:rgba(29,198,245,.07);"
+               onmouseover="this.style.background='rgba(29,198,245,.14)'" onmouseout="this.style.background='rgba(29,198,245,.07)'">
+              <img src="logos/wave.png" alt="Wave" class="w-10 h-10 rounded-xl object-cover flex-shrink-0">
+              <div>
+                <p class="font-bold text-sm text-ink">Payer via Wave</p>
+                <p class="text-xs mt-0.5" style="color:rgba(34,21,16,.45)">Lien de paiement direct →</p>
+              </div>
+            </a>
+            <div class="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2"
+                 style="border-color:rgba(249,115,22,.28);background:rgba(249,115,22,.07);">
+              <img src="logos/orangemoney.png" alt="Orange Money" class="w-10 h-10 rounded-xl object-contain bg-white flex-shrink-0">
+              <div>
+                <p class="font-bold text-sm text-ink">Orange Money</p>
+                <p class="font-mono font-bold text-base tracking-wide" style="color:#F97316;">78 182 55 63</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs" style="color:rgba(34,21,16,.4)">Puis renseignez le numéro de transaction ci-dessous ou joignez une capture d'écran.</p>
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2" for="idTransaction">
+            Numéro de transaction <span class="text-rouge" aria-hidden="true">*</span>
+          </label>
+          <input id="idTransaction" name="idTransaction" type="text"
+                 placeholder="ex : TX-98213-WA" class="form-input focus-ring">
+        </div>
+        <div>
+          <p class="text-sm font-bold mb-2">Ou joindre une capture d'écran du virement</p>
+          <!-- Input natif caché -->
+          <input id="capture" name="capture" type="file"
+                 accept="image/jpeg,image/jpg,image/png,image/webp,image/heic"
+                 class="sr-only" aria-describedby="captureHelp" tabindex="-1">
+          <!-- Zone de dépôt personnalisée -->
+          <div id="captureZone"
+               role="button" tabindex="0"
+               aria-label="Choisir ou déposer une capture d'écran"
+               aria-describedby="captureHelp"
+               class="group relative flex flex-col items-center justify-center gap-2
+                      rounded-2xl border-2 border-dashed border-ink/20
+                      bg-white/50 px-5 py-7 cursor-pointer
+                      transition-all duration-200
+                      hover:border-rouge/50 hover:bg-rouge/4
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rouge focus-visible:ring-offset-2">
+
+            <!-- État vide -->
+            <div id="captureEmpty" class="flex flex-col items-center gap-2 text-center pointer-events-none">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center
+                          bg-ink/6 group-hover:bg-rouge/10 transition-colors">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2"
+                     class="text-ink/40 group-hover:text-rouge transition-colors" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-ink/70 group-hover:text-rouge transition-colors">
+                  Glissez votre capture ici
+                </p>
+                <p class="text-xs text-ink/40 mt-0.5">ou <span class="underline font-semibold">cliquez pour parcourir</span></p>
+              </div>
+            </div>
+
+            <!-- État fichier sélectionné (caché par défaut) -->
+            <div id="captureSelected" class="hidden flex items-center gap-3 w-full pointer-events-none">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                   style="background:rgba(47,77,58,.12);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="#2F4D3A" stroke-width="2.2" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <polyline points="9 15 11 17 15 13"/>
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-bold text-ink truncate" id="captureFileName">—</p>
+                <p class="text-xs text-ink/45" id="captureFileSize">—</p>
+              </div>
+              <button type="button" id="captureClear"
+                      class="pointer-events-auto flex-shrink-0 w-7 h-7 rounded-full
+                             flex items-center justify-center
+                             bg-ink/8 hover:bg-rouge/15 hover:text-rouge
+                             transition-colors focus-ring"
+                      aria-label="Supprimer la capture">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="3" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Overlay drag-over -->
+            <div id="captureDragOverlay"
+                 class="hidden absolute inset-0 rounded-2xl pointer-events-none
+                        flex items-center justify-center"
+                 style="background:rgba(140,47,38,.08);border:2px solid #8C2F26;">
+              <p class="text-sm font-bold text-rouge">Relâchez pour déposer</p>
+            </div>
+          </div>
+          <p id="captureHelp" class="text-xs text-ink/40 mt-1.5">JPEG · PNG · WebP · HEIC — max 8 Mo</p>
+        </div>
+      </div>
+
+      <!-- hidden : ID de l'inscription existante (rempli automatiquement pour les partiels) -->
+      <input type="hidden" id="inscriptionId" name="inscriptionId">
+
+      <!-- Messages erreur / succès -->
+      <div id="formError" class="hidden rounded-2xl px-5 py-4 text-sm font-semibold leading-relaxed"
+           style="background:rgba(140,47,38,.1);border:2px solid rgba(140,47,38,.28);color:#6E241D;"
+           role="alert" aria-live="assertive"></div>
+
+      <div id="formSuccess" class="hidden rounded-2xl px-5 py-4 text-sm font-semibold leading-relaxed"
+           style="background:rgba(47,77,58,.1);border:2px solid rgba(47,77,58,.28);color:#2F4D3A;"
+           role="status" aria-live="polite"></div>
+
+      <button type="submit" id="submitBtn" class="btn-primary focus-ring">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+        <span id="submitLabel">Valider mon inscription</span>
+      </button>
+
+      <p class="text-center text-xs text-ink/38">
+        Votre inscription sera vérifiée par la commission d'organisation.
+      </p>
+    </div><!-- /formBody -->
+
+  </form>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="mt-8 border-t border-ink/10 bg-ink text-linen">
+  <div class="max-w-6xl mx-auto px-5 py-14">
+    <div class="footer-grid">
+
+      <!-- Branding -->
+      <div>
+        <p class="font-script text-2xl text-or mb-3">Yendu des Gestionnaires</p>
+        <p class="text-sm text-linen/55 leading-relaxed max-w-xs">
+          Une journée de communion, de sport et de souvenirs, organisée par et pour le département.
+        </p>
+        <a href="#inscription"
+           class="inline-flex items-center gap-2 mt-6 bg-rouge text-linen text-xs font-bold
+                  px-5 py-2.5 rounded-full hover:bg-rouge2 hover:-translate-y-0.5 hover:shadow-lg
+                  transition-all focus-ring">
+          S'inscrire maintenant
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="font-bold text-xs tracking-widest uppercase text-linen/38 mb-4">Navigation</h3>
+        <nav class="space-y-2.5" aria-label="Liens du pied de page">
+          <a href="#accueil"     class="block text-sm text-linen/65 hover:text-or transition-colors focus-ring">Accueil</a>
+          <a href="#lieu"        class="block text-sm text-linen/65 hover:text-or transition-colors focus-ring">Le lieu</a>
+          <a href="#programme"   class="block text-sm text-linen/65 hover:text-or transition-colors focus-ring">Programme</a>
+          <a href="#inscription" class="block text-sm text-linen/65 hover:text-or transition-colors focus-ring">Inscription</a>
+        </nav>
+      </div>
+
+      <!-- Infos événement -->
+      <div>
+        <h3 class="font-bold text-xs tracking-widest uppercase text-linen/38 mb-4">Événement</h3>
+        <ul class="space-y-2.5 text-sm text-linen/65">
+          <li class="flex items-center gap-2">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Samedi 18 Juillet 2026
+          </li>
+          <li class="flex items-center gap-2">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+            8h00 — 18h30
+          </li>
+          <li>
+            <a href="https://maps.app.goo.gl/uSasqHsUVyrgYrqD8"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex items-center gap-2 hover:text-or transition-colors focus-ring">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Yendu Bi, Sénégal
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            10 000 F CFA
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-linen/10 mt-10 pt-8 flex flex-col sm:flex-row
+                justify-between items-center gap-3 text-xs text-linen/32">
+      <p>© 2026 Yendu des Gestionnaires — Tous droits réservés.</p>
+      <p>Organisé avec <span class="text-rouge" aria-label="amour">❤</span> par le département.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Supabase JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+/* ══════════════════════════════════════════
+   CONFIGURATION SUPABASE
+   ══════════════════════════════════════════ */
+var SUPA_URL  = 'https://rikltsdbsdsgepmgmfbg.supabase.co';
+var SUPA_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJpa2x0c2Ric2RzZ2VwbWdtZmJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyODc2NTksImV4cCI6MjA5ODg2MzY1OX0.gADx8K7SJm7nJzQ_86o_MxMuKjyZ4OjfuATaXh0StB0';
+var supabase  = window.supabase.createClient(SUPA_URL, SUPA_KEY);
+
+var EVENT_DATE      = new Date('2026-07-18T08:00:00');
+var MENU_TARGET     = 5000;
+var MAX_FILE_SIZE   = 8 * 1024 * 1024; // 8 Mo
+var ALLOWED_TYPES   = ['image/jpeg','image/jpg','image/png','image/webp','image/heic'];
+var DRAFT_KEY       = 'yendu_form_draft';
+
+/* ══════════════════════════════════════════
+   DONNÉES
+   ══════════════════════════════════════════ */
+var INFRA = [
+  {label:'Terrain de foot',   emoji:'⚽'},
+  {label:'Terrain de tennis', emoji:'🎾'},
+  {label:'Terrain de basket', emoji:'🏀'},
+  {label:'Vélos BMX',         emoji:'🚲'},
+  {label:'Baby-foot',         emoji:'🕹️'},
+  {label:'Trampoline',        emoji:'🤸'},
+  {label:'Tyrolienne',        emoji:'🪂'},
+  {label:"Tir à l'arc",       emoji:'🏹'},
+];
+
+var PROGRAMME = [
+  {h:'8h',    t:'Départ'},
+  {h:'11h',   t:'Collation'},
+  {h:'12h',   t:'Atelier peinture'},
+  {h:'13h30', t:"Cercle d'anecdotes"},
+  {h:'15h',   t:'Déjeuner'},
+  {h:'16h',   t:'Compétition'},
+  {h:'17h30', t:'Prestation talents'},
+  {h:'18h30', t:'Activités de clôture'},
+];
+
+/* ══════════════════════════════════════════
+   RENDU — INFRASTRUCTURE
+   (DOM API — sans innerHTML sur données)
+   ══════════════════════════════════════════ */
+(function renderInfra() {
+  var grid = document.getElementById('infra-grid');
+  INFRA.forEach(function(item, i) {
+    var card = document.createElement('div');
+    card.className = 'card-lift fade-up bg-white/60 border border-ink/10 rounded-2xl p-5 text-center';
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('data-delay', String((i % 4) + 1));
+
+    var iconBox = document.createElement('div');
+    iconBox.className = 'infra-icon';
+    iconBox.setAttribute('aria-hidden', 'true');
+    iconBox.textContent = item.emoji;
+
+    var lbl = document.createElement('div');
+    lbl.className = 'font-bold text-sm';
+    lbl.textContent = item.label;
+
+    card.appendChild(iconBox);
+    card.appendChild(lbl);
+    grid.appendChild(card);
+  });
+})();
+
+/* ══════════════════════════════════════════
+   RENDU — TIMELINE
+   ══════════════════════════════════════════ */
+(function renderTimeline() {
+  var list = document.getElementById('timeline');
+  PROGRAMME.forEach(function(item, i) {
+    var li = document.createElement('li');
+    li.className = 'fade-up flex gap-4 items-start pb-5 last:pb-0';
+
+    /* Colonne gauche : dot + ligne */
+    var col = document.createElement('div');
+    col.className = 'flex-shrink-0 flex flex-col items-center';
+
+    var dot = document.createElement('div');
+    dot.className = 'prog-dot';
+    dot.textContent = item.h;
+    dot.setAttribute('aria-label', item.h);
+    col.appendChild(dot);
+
+    if (i < PROGRAMME.length - 1) {
+      var line = document.createElement('div');
+      line.className = 'timeline-line w-0.5 flex-1 mt-2 min-h-[1.5rem]';
+      line.setAttribute('aria-hidden', 'true');
+      col.appendChild(line);
+    }
+
+    /* Colonne droite : carte */
+    var card = document.createElement('div');
+    card.className = 'bg-white/60 border border-ink/10 rounded-2xl px-5 py-4 flex-1 mb-1';
+
+    var time = document.createElement('p');
+    time.className = 'text-[.65rem] font-bold text-ink/38 uppercase tracking-wider mb-0.5';
+    time.textContent = item.h;
+    time.setAttribute('aria-hidden', 'true');
+
+    var title = document.createElement('p');
+    title.className = 'font-display font-bold text-lg leading-snug';
+    title.textContent = item.t;
+
+    card.appendChild(time);
+    card.appendChild(title);
+    li.appendChild(col);
+    li.appendChild(card);
+    list.appendChild(li);
+  });
+})();
+
+/* ══════════════════════════════════════════
+   COMPTE À REBOURS
+   ══════════════════════════════════════════ */
+var _cdSecEl = document.getElementById('cd-sec');
+var _cdPrevSec = -1;
+
+function tickCountdown() {
+  var diff = Math.max(0, EVENT_DATE - new Date());
+  var d = Math.floor(diff / 86400000);
+  var h = Math.floor(diff % 86400000 / 3600000);
+  var m = Math.floor(diff % 3600000 / 60000);
+  var s = Math.floor(diff % 60000 / 1000);
+
+  document.getElementById('cd-days').textContent  = d;
+  document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-min').textContent   = String(m).padStart(2, '0');
+
+  /* Secondes avec animation flip à chaque changement */
+  if (s !== _cdPrevSec) {
+    _cdPrevSec = s;
+    _cdSecEl.textContent = String(s).padStart(2, '0');
+    _cdSecEl.classList.remove('sec-flip');
+    void _cdSecEl.offsetWidth; /* reflow pour relancer l'animation */
+    _cdSecEl.classList.add('sec-flip');
+  }
+
+  /* Verrouillage du formulaire après l'événement */
+  if (diff === 0) {
+    var form = document.getElementById('regForm');
+    var btn  = document.getElementById('submitBtn');
+    if (btn) {
+      btn.disabled = true;
+      document.getElementById('submitLabel').textContent = 'Inscriptions clôturées';
+    }
+    if (form) {
+      var notice = document.createElement('p');
+      notice.className = 'text-center text-sm font-semibold text-rouge mb-4';
+      notice.textContent = 'Les inscriptions sont désormais fermées.';
+      form.parentNode.insertBefore(notice, form);
+    }
+  }
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
+   ══════════════════════════════════════════ */
+(function setupReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.fade-up').forEach(function(el) { el.classList.add('in'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -35px 0px'});
+  document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+})();
+
+/* ══════════════════════════════════════════
+   MENU BUILDER
+   ══════════════════════════════════════════ */
+var menuState = {
+  plat:       'filet',
+  accomp1:    'frites',
+  accomp2:    'oignon',
+  snackBase:  'burger-viande',
+  snackDrink: 'pressea',
+  pizzaBase:  'reine',
+  pizzaComp:  'frites',
+};
+
+var PLAT_LABELS = {
+  filet: 'Brochette Filet',
+  taouk: 'Brochette Taouk Poulet',
+  mix:   'Brochette Mix',
+};
+var ACCOMP_LABELS  = {frites:'Frites', riz:'Riz'};
+var SAUCE_LABELS   = {oignon:'Sauce oignon', yassa:'Sauce yassa'};
+var SNACK_BASE_LBL = {
+  'burger-viande':'Burger viande','burger-crispy':'Burger crispy',
+  'tacos-poulet':'Tacos poulet','tacos-viande':'Tacos viande','tacos-hotdog':'Tacos hot dog',
+};
+var DRINK_LABELS    = {pressea:'Canette Pressea', kirene:'Kirène 1.5L'};
+var PIZZA_BASE_LBL  = {reine:'Pizza Reine', margarite:'Pizza Margarite', '4fromages':'Pizza 4 Fromages', yendibi:'Pizza Spéciale Yendi Bi'};
+var PIZZA_COMP_LBL  = {frites:'Frites', boisson:'Boisson au choix'};
+
+function renderMenu() {
+  var builder = document.getElementById('menuBuilder');
+  builder.innerHTML = '';
+
+  /* Options principales */
+  var mainOpts = [
+    {id:'filet', label:'Brochette Filet',                        price:'5 000 F'},
+    {id:'taouk', label:'Brochette Taouk Poulet',                 price:'5 000 F'},
+    {id:'mix',   label:'Brochette Mix',                          price:'5 000 F'},
+    {id:'snack', label:'Burger ou Tacos + frites + boisson',     price:'3 000 + 1 000 + 1 000 F'},
+    {id:'pizza', label:'Pizza PM + complément',                  price:'4 000 + 1 000 F'},
+  ];
+
+  var grid = document.createElement('div');
+  grid.className = 'grid gap-2.5';
+
+  mainOpts.forEach(function(opt) {
+    var lbl = document.createElement('label');
+    lbl.className = [
+      'ticket flex items-center justify-between gap-3 border-2 border-ink/15 rounded-xl px-4 py-4',
+      'cursor-pointer bg-white/40 has-[:checked]:border-or has-[:checked]:bg-or/12',
+      'transition-all hover:border-or/35 hover:bg-white/55',
+    ].join(' ');
+
+    var left = document.createElement('span');
+    left.className = 'flex items-center gap-3 min-w-0';
+
+    var radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'platChoice';
+    radio.id   = 'plat-' + opt.id;
+    radio.value = opt.id;
+    radio.className = 'w-4 h-4 flex-shrink-0';
+    if (opt.id === menuState.plat) radio.checked = true;
+    radio.addEventListener('change', function(e) {
+      menuState.plat = e.target.value;
+      renderSubOptions();
+      computeTotal();
+      saveDraft();
+    });
+
+    var txt = document.createElement('span');
+    txt.className = 'font-semibold text-sm leading-snug';
+    txt.textContent = opt.label;
+
+    var price = document.createElement('span');
+    price.className = 'text-xs text-ink/50 font-bold whitespace-nowrap flex-shrink-0';
+    price.textContent = opt.price;
+
+    left.appendChild(radio);
+    left.appendChild(txt);
+    lbl.appendChild(left);
+    lbl.appendChild(price);
+    grid.appendChild(lbl);
+  });
+
+  builder.appendChild(grid);
+
+  var subBox = document.createElement('div');
+  subBox.id = 'subOptions';
+  subBox.className = 'mt-5 space-y-4';
+  builder.appendChild(subBox);
+
+  renderSubOptions();
+  computeTotal();
+}
+
+function renderSubOptions() {
+  var box = document.getElementById('subOptions');
+  if (!box) return;
+  box.innerHTML = '';
+
+  var grid = document.createElement('div');
+  grid.className = 'grid sm:grid-cols-2 gap-3';
+
+  if (['filet','taouk','mix'].indexOf(menuState.plat) > -1) {
+    grid.appendChild(buildSubGroup('Accompagnement', 'accomp1', [
+      ['frites','Frites'],['riz','Riz'],
+    ], menuState.accomp1));
+    grid.appendChild(buildSubGroup('Sauce', 'accomp2', [
+      ['oignon','Sauce oignon'],['yassa','Sauce yassa'],
+    ], menuState.accomp2));
+    box.appendChild(grid);
+
+  } else if (menuState.plat === 'snack') {
+    grid.appendChild(buildSubGroup('Base (3 000 F)', 'snackBase', [
+      ['burger-viande','Burger viande'],['burger-crispy','Burger crispy'],
+      ['tacos-poulet','Tacos poulet'],['tacos-viande','Tacos viande'],['tacos-hotdog','Tacos hot dog'],
+    ], menuState.snackBase));
+    grid.appendChild(buildSubGroup('Boisson (1 000 F) · frites incluses (1 000 F)', 'snackDrink', [
+      ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],
+    ], menuState.snackDrink));
+    box.appendChild(grid);
+
+  } else if (menuState.plat === 'pizza') {
+    grid.appendChild(buildSubGroup('Pizza PM (4 000 F)', 'pizzaBase', [
+      ['reine','Reine'],['margarite','Margarite'],['4fromages','4 Fromages'],['yendibi','Spéciale Yendi Bi'],
+    ], menuState.pizzaBase));
+    grid.appendChild(buildSubGroup('Complément (1 000 F)', 'pizzaComp', [
+      ['frites','Frites'],['boisson','Boisson au choix'],
+    ], menuState.pizzaComp));
+    box.appendChild(grid);
+  }
+
+  box.querySelectorAll('input[type=radio]').forEach(function(r) {
+    r.addEventListener('change', function(e) {
+      menuState[e.target.name] = e.target.value;
+      computeTotal();
+      saveDraft();
+    });
+  });
+}
+
+function buildSubGroup(title, name, opts, current) {
+  var col = document.createElement('div');
+
+  var hdr = document.createElement('p');
+  hdr.className = 'text-xs font-bold mb-2 text-ink/50';
+  hdr.textContent = title;
+  col.appendChild(hdr);
+
+  var wrap = document.createElement('div');
+  wrap.className = 'flex flex-wrap gap-2';
+
+  opts.forEach(function(pair) {
+    var val = pair[0], text = pair[1];
+    var lbl = document.createElement('label');
+    lbl.className = [
+      'border-2 border-ink/15 rounded-full px-3.5 py-1.5 text-xs font-semibold cursor-pointer',
+      'has-[:checked]:bg-ink has-[:checked]:text-linen has-[:checked]:border-ink',
+      'transition-all hover:border-ink/35',
+    ].join(' ');
+
+    var r = document.createElement('input');
+    r.type = 'radio';
+    r.name = name;
+    r.value = val;
+    r.className = 'sr-only';
+    if (val === current) r.checked = true;
+
+    var sp = document.createElement('span');
+    sp.textContent = text;
+
+    lbl.appendChild(r);
+    lbl.appendChild(sp);
+    wrap.appendChild(lbl);
+  });
+
+  col.appendChild(wrap);
+  return col;
+}
+
+function computeTotal() {
+  var total = 0, detail = '';
+
+  if (['filet','taouk','mix'].indexOf(menuState.plat) > -1) {
+    total  = 5000;
+    detail = (PLAT_LABELS[menuState.plat]   || menuState.plat)
+           + ' — '
+           + (ACCOMP_LABELS[menuState.accomp1] || menuState.accomp1)
+           + ', '
+           + (SAUCE_LABELS[menuState.accomp2]  || menuState.accomp2);
+  } else if (menuState.plat === 'snack') {
+    total  = 5000;
+    detail = (SNACK_BASE_LBL[menuState.snackBase] || menuState.snackBase)
+           + ' + Frites + '
+           + (DRINK_LABELS[menuState.snackDrink]  || menuState.snackDrink);
+  } else if (menuState.plat === 'pizza') {
+    total  = 5000;
+    detail = (PIZZA_BASE_LBL[menuState.pizzaBase] || menuState.pizzaBase)
+           + ' + '
+           + (PIZZA_COMP_LBL[menuState.pizzaComp] || menuState.pizzaComp);
+  }
+
+  window.__menuTotal  = total;
+  window.__menuDetail = detail;
+
+  var affiche = document.getElementById('totalAffiche');
+  var box     = document.getElementById('totalBox');
+  var msg     = document.getElementById('totalMsg');
+  if (!affiche || !box || !msg) return;
+
+  affiche.textContent = total.toLocaleString('fr-FR') + ' F';
+
+  if (total === MENU_TARGET) {
+    box.style.background   = 'rgba(47,77,58,.1)';
+    box.style.borderColor  = '#2F4D3A';
+    msg.textContent = '';
+  } else {
+    box.style.background   = 'rgba(140,47,38,.08)';
+    box.style.borderColor  = '#8C2F26';
+    msg.textContent = 'Le total doit être exactement 5 000 F (actuellement ' + total.toLocaleString('fr-FR') + ' F).';
+  }
+}
+renderMenu();
+
+/* ══════════════════════════════════════════
+   VÉRIFICATION D'INSCRIPTION (Supabase RPC)
+   ══════════════════════════════════════════ */
+var vState = {statut: 'idle', inscriptionId: null, resteAPayer: 0, montantVerse: 0};
+var verifyTimer = null;
+
+function afficherBannerStatut(statut) {
+  var banner   = document.getElementById('statusBanner');
+  var checking = document.getElementById('statusChecking');
+  var complet  = document.getElementById('statusComplet');
+  var partiel  = document.getElementById('statusPartiel');
+  if (statut === 'idle' || statut === 'nouveau') { banner.classList.add('hidden'); return; }
+  banner.classList.remove('hidden');
+  checking.classList.toggle('hidden', statut !== 'checking');
+  complet.classList.toggle('hidden',  statut !== 'complet');
+  partiel.classList.toggle('hidden',  statut !== 'partiel');
+}
+
+function buildPaiementHTML(montantLabel, prefixTexte) {
+  return ''
+    + '<p class="text-sm mb-3" style="color:rgba(34,21,16,.65)">' + prefixTexte + ' <strong style="color:#221510">' + montantLabel + '</strong> via :</p>'
+    + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;">'
+      + '<a href="https://pay.wave.com/m/M_sn_zV5zLviK9q38/c/sn/" target="_blank" rel="noopener noreferrer"'
+      + ' style="display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;border-radius:1rem;border:2px solid rgba(29,198,245,.3);background:rgba(29,198,245,.08);text-decoration:none;transition:background .2s;"'
+      + ' onmouseover="this.style.background=\'rgba(29,198,245,.16)\'" onmouseout="this.style.background=\'rgba(29,198,245,.08)\'">'
+        + '<img src="logos/wave.png" alt="Wave" style="width:2.5rem;height:2.5rem;border-radius:.625rem;object-fit:cover;flex-shrink:0;">'
+        + '<div><p style="font-weight:700;font-size:.875rem;color:#221510;margin:0">Payer via Wave</p>'
+        + '<p style="font-size:.7rem;color:rgba(34,21,16,.45);margin:.1rem 0 0">Lien de paiement direct →</p></div>'
+      + '</a>'
+      + '<div style="display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;border-radius:1rem;border:2px solid rgba(249,115,22,.28);background:rgba(249,115,22,.07);">'
+        + '<img src="logos/orangemoney.png" alt="Orange Money" style="width:2.5rem;height:2.5rem;border-radius:.625rem;object-fit:contain;background:#fff;flex-shrink:0;">'
+        + '<div><p style="font-weight:700;font-size:.875rem;color:#221510;margin:0">Orange Money</p>'
+        + '<p style="font-weight:700;font-size:1rem;font-family:monospace;letter-spacing:.05em;color:#F97316;margin:.1rem 0 0">78 182 55 63</p></div>'
+      + '</div>'
+    + '</div>'
+    + '<p style="font-size:.7rem;color:rgba(34,21,16,.4);margin-top:.5rem">Puis renseignez le numéro de transaction ci-dessous ou joignez une capture d\'écran.</p>';
+}
+
+function appliquerEtat(data) {
+  var formBody      = document.getElementById('formBody');
+  var profilSection = document.getElementById('profilSection');
+  var blocAncien    = document.getElementById('blocAncien');
+  var blocNouveau   = document.getElementById('blocNouveau');
+  var paiementTitle = document.getElementById('paiementTitle');
+  var paiementInstr = document.getElementById('paiementInstructions');
+  var submitBtn     = document.getElementById('submitBtn');
+  var submitLbl     = document.getElementById('submitLabel');
+
+  if (data.statut === 'complet') {
+    /* ── Inscription déjà complète : masquer tout le formulaire ── */
+    formBody.classList.add('hidden');
+
+  } else if (data.statut === 'partiel') {
+    /* ── Solde restant : formulaire simplifié ── */
+    formBody.classList.remove('hidden');
+    profilSection.classList.add('hidden');
+    blocAncien.classList.add('hidden');
+    blocNouveau.classList.remove('hidden');
+
+    var solde = data.reste_a_payer.toLocaleString('fr-FR');
+    paiementTitle.textContent = 'Paiement du solde — ' + solde + ' F CFA';
+    paiementInstr.innerHTML = buildPaiementHTML(solde + ' F CFA', 'Réglez votre solde de');
+
+    /* Banners montants */
+    document.getElementById('montantDejaVerse').textContent =
+      data.montant_verse.toLocaleString('fr-FR');
+    document.getElementById('soldeRestant').textContent = solde;
+
+    /* Stocker l'ID pour le submit */
+    document.getElementById('inscriptionId').value = data.inscription_id;
+    vState.inscriptionId = data.inscription_id;
+    vState.resteAPayer   = data.reste_a_payer;
+    vState.montantVerse  = data.montant_verse;
+
+    /* Préremplir WhatsApp si connu */
+    if (data.whatsapp && !getVal('whatsapp').trim()) setVal('whatsapp', data.whatsapp);
+
+    /* Bouton adapté */
+    submitLbl.textContent = 'Solder mon inscription';
+
+  } else {
+    /* ── Nouveau : formulaire complet ── */
+    formBody.classList.remove('hidden');
+    profilSection.classList.remove('hidden');
+    blocAncien.classList.add('hidden');
+    blocNouveau.classList.remove('hidden');
+    paiementTitle.textContent = 'Paiement — 10 000 F CFA';
+    paiementInstr.innerHTML = buildPaiementHTML('10 000 F CFA', 'Effectuez un virement de');
+    submitBtn.disabled = false;
+    submitLbl.textContent = 'Valider mon inscription';
+  }
+}
+
+async function verifierInscription() {
+  var nom    = getVal('nom').trim();
+  var prenom = getVal('prenom').trim();
+  if (!nom || !prenom) return;
+
+  afficherBannerStatut('checking');
+  vState = {statut: 'idle', inscriptionId: null, resteAPayer: 0, montantVerse: 0};
+
+  try {
+    var rpcRes = await supabase.rpc('verifier_inscription', {p_nom: nom, p_prenom: prenom});
+    if (rpcRes.error) throw rpcRes.error;
+
+    var data = rpcRes.data || {statut: 'nouveau'};
+    vState = Object.assign({statut: data.statut || 'nouveau'}, data);
+    afficherBannerStatut(data.statut || 'nouveau');
+    appliquerEtat(data);
+  } catch(e) {
+    /* En cas d'erreur réseau : on laisse passer en mode nouveau */
+    afficherBannerStatut('idle');
+    appliquerEtat({statut: 'nouveau'});
+  }
+}
+
+function planifierVerification() {
+  clearTimeout(verifyTimer);
+  verifyTimer = setTimeout(verifierInscription, 700);
+}
+
+(function attachVerification() {
+  var nomEl    = document.getElementById('nom');
+  var prenomEl = document.getElementById('prenom');
+
+  function onBlur() {
+    if (getVal('nom').trim() && getVal('prenom').trim()) planifierVerification();
+  }
+  function onInput() {
+    if (vState.statut !== 'idle') {
+      /* L'utilisateur a modifié son nom : reset état */
+      vState = {statut: 'idle', inscriptionId: null, resteAPayer: 0, montantVerse: 0};
+      afficherBannerStatut('idle');
+      appliquerEtat({statut: 'nouveau'});
+    }
+  }
+  nomEl.addEventListener('blur',  onBlur);
+  prenomEl.addEventListener('blur', onBlur);
+  nomEl.addEventListener('input',  onInput);
+  prenomEl.addEventListener('input', onInput);
+})();
+
+/* ══════════════════════════════════════════
+   PICKER DE NOM PAR CLASSE
+   ══════════════════════════════════════════ */
+(function setupNamePicker() {
+
+  var LISTE = {
+    'DUT 1': [
+      ['Fabrice Adama','AYESSOU'],['Papa Diery','BA'],['Mouhamed','BABOU'],
+      ['Marième','BARRO'],['Papa Lamine','BASSE'],['Samba Ly','BASSOUM'],
+      ['Yvonne Matide','BATIGA'],['Adji Nogaye','BEYE'],['Khady Maty','BEYE'],
+      ['Ramatoulaye','BEYE'],['Khadidiatou','CISS'],['Moustapha','CISSE'],
+      ['Awa','DANFAKHA'],['Exaucée Joelle','DAVIDSON TOMBET'],['Salamata','DIA'],
+      ['Sokhna Mbène','DIA'],['Awa','DIAGNE'],['Ndeye Amy','DIAKHATE'],
+      ['Aissatou','DIAL'],['Marième','DIALLO'],['Sira Penda','DIALLO'],
+      ['Awa Dieynaba Kane','DIALLO'],['Rose Célestine','DIATTA'],['Dado','DIENG'],
+      ['Mor Talla','DIENG'],['Aminata','DIEYE'],['Aïssatou','DIEYE'],
+      ['Astou','DIOP'],['Cheikh Mohamet Fadil','DIOP'],['Daouda','DIOP'],
+      ['Fatou','DIOP'],['Mouhamadou Lamine','DIOP'],['Aminata','DIOP'],
+      ['Bara','DIOP'],['Khadidiatou','DIOP'],['Awa','DIOUF'],['Oumy','DRAME'],
+      ['Mawlouda','FALL'],['Aïcha','FAYE'],['Pape Abdoulaye Cor','FAYE'],
+      ['Fatima Yasmine','GAYE'],['Awa','GAYE'],['Ndeye Fatou','GUEYE'],
+      ['Ndeye Anta','GUEYE'],['Seynabou','GUEYE'],['Thiaba','HANE'],
+      ['Farmata','HOTT'],['Idrissa Seydou','KANE'],['Fatima','KEITA'],
+      ['Lala','KONDE'],['Faty','LO'],['Sana','MANE'],['Lala Maty','MANE'],
+      ['Amadou','MBALLO'],['Mariama','MBAYE'],['MOHAMED SAID','MOHAMED ABDERRAHMANE N\'BOULE'],
+      ['Maguette Ylo','NDIAYE'],['Clothilde Marianne','NDIAYE'],['Mouhamadou','NDIAYE'],
+      ['Boury Magatte','NDIOM'],['Rokhaya','NDOUR'],['Adannaya Joy','NDUKWE'],
+      ['Aïcha','POUYE'],['Yaye Marema','SALL'],['Mame Lissa Khadidja','SAR'],
+      ['Fatim Ndiaye','SARR'],['Yabèye Thiaw','SARR'],['Abdou Aziz','SECK'],
+      ['Moustapha','SECK'],['Astou','SISSOKO'],['Aïda Leïla','SOW'],
+      ['Bolo Racine','SOW'],['Adji Yacine','SYLLA'],['Sokhna','TALL'],
+      ['Hamidou','TALL'],['Hamath','THIAM'],['Adji Marie','THIAM'],
+      ['Yaye Lary Boubou','TRAORE'],['Maguette','TRAORE'],['Moustapha','WAYAL'],
+    ],
+    'DUT 2': [
+      ['Oumy Nasry','AIDARA'],['Ndèye Khoudia','ASSEF'],['Alioune Jean Julien','AUBYN'],
+      ['Cheikh Ahmed Tidiane','BA'],['Fatoumata','BA'],['Mactar','BA'],
+      ['Moussa Moustapha','BA'],['Awa Diop','BADJI'],['Christian Boubacar','BAKHOUM'],
+      ['Cheikhna Ahmad Tidiane Cherif','BEYE'],['Iba Khalil','BEYE'],
+      ['Marlène Katampe','BIAGUI'],['Abdel Kader','CISSE'],['Aissatou','CISSE'],
+      ['El Hadji Daouda','CISSE'],['Rokhaya','CISSE'],['Ibrahima','DEM'],
+      ['Adama','DIA'],['Cheikh Ahmed Tidiane','DIACK'],['Fatou','DIALLO'],
+      ['Oumou','DIALLO'],['Saliou','DIAO'],['Alassane Aballa','DIENG'],
+      ['Mame Mah','DIENG'],['Fatou Aicha','DIONGUE'],['Awa','DIOP'],
+      ['El Hadji Abdoulaye Ndiaye','DIOP'],['Fatima','DIOP'],['Marie Ndiaye','DIOP'],
+      ['Ndèye Awa','DIOP'],['Bara','DRAME'],['Cheikh Ahmad Tidjani Cherif','DRAME'],
+      ['Mame Fatou','FALL'],['Soda','FALL'],['Coumba','FAYE'],
+      ['Ndèye Marieme','FAYE'],['Rama','GASSAMA'],['Léonard Bonaventure Comlan','GBEDEKO'],
+      ['Amelia Fatima','GOMIS'],['Arame','GUEYE'],['Cheikh Abdoulani Diakhate','GUEYE'],
+      ['Oumy','GUEYE'],['Raissa Bernadette Yacine Dibor','KA'],
+      ['Aminata Nakha','KAMARA'],['Tidiane','KANDE'],['Aissatou','KANE'],
+      ['Amadou','KANTE'],['Ndiawar','KONE'],['El Hadj Kabine','MAGASSOUBA'],
+      ['Sokhna Seynabou','MBACKE'],['Mame Fatou David','MBAYE'],
+      ['Ndèye Mareme','MBOW'],['Aissatou Danielle','NDIAYE'],['Fatou','NDIAYE'],
+      ['Mame Maty','NDIAYE'],['Mouhamed','NDIAYE'],['Ndèye Fatou','NDIAYE'],
+      ['Ndèye Seynabou','NDIAYE'],['Sokhna','NIANE'],['Serigne Fallilou','NIANG'],
+      ['Mouhamadou','SAGNA'],['Awa Cheikh','SECK'],['Mously','SECK'],
+      ['Boury Sow','SENE'],['Marie Pierre Tening','SENE'],
+      ['Djindji Elisabeth Ndew','SENGHOR'],['Khadidiatou','SERY'],
+      ['Mame Fatou','SEYE'],['Yacine','SEYE'],['Aminata','SOW'],
+      ['Fatimatou Zahra','SOW'],['Kardiathou','SOW'],['Sikouna','SYLLA'],
+      ['Ndèye Layla','THIAM'],['El Hadji Ousmane','THOURE'],['Khadidiatou','TOURE'],
+      ['Arona','Diaw'],['Arame','Diop'],['Salka','Fall'],['Pape Yatma','Lô'],
+      ['Seynabou Sarr','Keita'],['Abdou Aziz','Ndao'],['Awa','Ndiaye'],
+      ['Yaye Fatou Guette','Ndiaye'],['Marie Adèle','Ndong'],['Binta Sylla','Ndoye'],
+      ['Fatoumata','Niang'],['Mouhamed','Paye'],['Fatoumata','Simpara'],
+      ['Coumba','Sow'],['Fatou','Sylla'],['Ndeye Penda','Sy'],
+      ['Ndeye Fatou Thioro','Taye'],['Yoyhanidou','Weddou Houebib'],
+    ],
+    'MAME 1': [
+      ['Serigne Fallou','Agne'],['Cheikh Ahmed Tidiane','BA'],['Saguinatou','Ball'],
+      ['Sadio','BATHIA'],['Anne Marie Kouta','DA-ROSA'],['Adama','Diakhate'],
+      ['Bara','Diallo'],['Ndeye Aby','Diallo'],['Henriette Célestine','DIATTA'],
+      ['Oumy','Diaw'],['Seyda','Diaw'],['Mamadou Lamine','DIENG'],
+      ['Mariama','Dieng'],['Marcel Dib Siga','DIONE'],['Ndeye Marie','DIOP'],
+      ['Mouhamadou Rassoul','DIOP'],['Ndéye Penda','Diop'],
+      ['Cécile Madeleine','DIOUF'],['Mame Faty Laye','Diouf'],
+      ['Serigne Saliou','DIOUF'],['Khodia','Doucouré'],['Mouhamed omar','Fall'],
+      ['Ndeye Aïssatou','FALL'],['Aminata','Faye'],['Ndeye Aminata','Fofana'],
+      ['Mame Diarra','Gassama'],['Ndieme','Gaye'],['Nancy Alima','GUEYE'],
+      ['Aïda','Gueye'],['El hadji malick','Gueye'],['Sokhna Faty Diakhaté','Kane'],
+      ['Awa','Khouma'],['Ndeye Fatou','LAME'],['Tacko','Mbaye'],
+      ['Alassane','MBAYE'],['Fatou','Mbengue'],['Adelphine Brokodia','Mendy'],
+      ['Ndiaté','Ndiaye'],['Gora','Ndiaye'],['El hadji sidy','Ndiaye'],
+      ['Seynabou','Ndiaye'],['Angele khady','Ndiaye'],['Fatou Kine','Ndour'],
+      ['Nafissatou','Ndoye'],['Abdou','Nguer'],['Aliou','NIANE'],
+      ['Ndeye sokhna','NIANE'],['Fatou Niang','SARR'],['Ndeye Mbenda','SECK'],
+      ['Awa','Sène'],['Diariatou','SOW'],['Aminata','Sow'],['Rouguiyatou','Sow'],
+      ['Assietou Abdou','SY'],['Sattou','THIAM'],['Ramata','THIAM'],
+      ['Aminata','THIAW'],['Fatou Salla','THIOUB'],['Aichatou','Thioune'],
+      ['Oumou fatou','Wade'],
+    ],
+    'MAME 2': [
+      ['Cheikhoul Khadim','AMAR'],['Ibrahima Agne','BA'],['Ismaila Kenda','BA'],
+      ['Oumou','BA'],['Aïcha','BATHILY'],['Khadidiatou','BOUSSO'],
+      ['Fatimetou Zahra','CHEIKH MOHAMED VADEL'],['Adama','CISSE'],
+      ['Aminata','CISSE'],['Seydi Mactar','DIA'],['Penda','DIAKITE'],
+      ['Mohamed Bachir','DIAL'],['MAMADOU SALIOU','DIALLO'],['Adama','DIASSE'],
+      ['Fanta','DIENG'],['Rose Marie Pierrette','DIENG'],['Mbaye','DIEYE'],
+      ['Cheikh Ahmadou Bamba','DIOP'],['ROKHAYA','DIOUF'],['Aminata','DRAME'],
+      ['Abdourahmane','FALL'],['Abibatou','FALL'],['Aboubakar','FALL'],
+      ['Elisabeth Caroline','FAYE'],['Thecle Viviane Bayivie','GNACADJA'],
+      ['Mame Kéne','GUEYE'],['Mouhamadou Malick','KASSE'],['Mame Diarra','MBACKE'],
+      ['Fatou','MBAYE'],['Aminata','MBENGUE'],['Noely Naguida','NDECKY'],
+      ['Awa','NDIAYE'],['Fatimata','NDIAYE'],['Khadidiatou','NDIAYE'],
+      ['Khadija Malvina','NDIAYE'],['Oumar Edmond Jean Pierre','NDIAYE'],
+      ['Salma','NDIAYE'],['Marfa','NIANE'],['Mor','NIANG'],['Sala','SAMB'],
+      ['Boury','SARR'],['Papa Mamadou Lamine','SARR'],['Pape Demba','SARR'],
+      ['Maïmouna Dicko','SECK'],['Ibrahima Benne Ahmed','SOCK'],['ANNA','SOW'],
+      ['Baba','SY'],['Amadou Mamadou','SYLLA'],['Dame','SYLLA'],
+      ['Mame Diarra','THIAM'],['Pape Matar','THIOUNE'],['Maryam','WADE'],
+    ],
+    'MAME 3': [
+      ['Ndèye Marie','BADIANE'],['Rosa','BAMPOKY'],['Mamadou Lamine','BEYE'],
+      ['Ndéye Lalla','COULIBALY'],['Aminata','DIAGNE'],['Mamadou','DIAGNE'],
+      ['Mariama Bory','DIALLO'],['Cheikh Ahmadou Bamba','DIENG'],
+      ['Alimatou','DIEYE'],['Waly','DIONE'],['AMINATA','DIOP'],['Awa','DIOP'],
+      ['FATIMATA OUMAR','DIOP'],['FATOU','DIOP'],['Rocaya','DIOP'],
+      ['Benoit Michel','DIOUF'],['Fama','DIOUGUE'],['Ciré','DJITTE'],
+      ['Mariama Djelo','DRAME'],['IBRAHIMA','FALL'],['Keuhleu','FALL'],
+      ['Ndèye Bineta','FALL'],['Hawa Florine','FOFANA'],['Mamadou','GUEYE'],
+      ['Marèma','GUEYE'],['Serigne Saliou','GUEYE'],['Souleymane','HAYDARA'],
+      ['Ndeye Oumy','KONE'],['Momar','LO'],['Oumy','LO'],['Hawa Kane','LY'],
+      ['Thiaba','MBOUP'],['Mame Bousso','MBOW'],['Maguette Gaye','NDIAYE'],
+      ['Ndeye Maguette','NDIAYE'],['Ndèye Fatou','NDOUR'],['Ndeye Khady','NGALANE'],
+      ['Seydina Issa Laye','NGOM'],['Fatima Bint Rassoul','NIANG'],
+      ['Hermann Hippolyte','SAGNA'],['Hamidou','SAMASSA'],['Mame Diarra','SAO'],
+      ['Salimata','SARR'],['Sylvie Lobette','SENE'],['Souleymane','SOUMARE'],
+      ['Mor','SOW'],['Alimatou Sadiya','THIAM'],['Diodio','THIAM'],
+      ['Ndèye Awa','THIAM'],['Aïda Laye','THIAW'],['Sokhna Diarra','TOURE'],
+      ['Mouhamadou Moustapha','YOUM'],
+    ],
+  };
+
+  var currentClasse  = null;
+  var pickerBlock    = document.getElementById('pickerBlock');
+  var nomPrenomFields= document.getElementById('nomPrenomFields');
+  var nameSearch     = document.getElementById('nameSearch');
+  var nameListEl     = document.getElementById('nameList');
+  var selCard        = document.getElementById('selectedNameCard');
+  var selText        = document.getElementById('selectedNameText');
+  var clearBtn       = document.getElementById('clearNameSelection');
+  var nomInput       = document.getElementById('nom');
+  var prenomInput    = document.getElementById('prenom');
+  var profilSection  = document.getElementById('profilSection');
+
+  /* Normalisation insensible à la casse et aux accents */
+  function norm(s) {
+    return (s || '').toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g,'')
+      .replace(/\s+/g,' ').trim();
+  }
+
+  /* Affiche la liste filtrée */
+  function renderList(q) {
+    var items = LISTE[currentClasse] || [];
+    var nq = norm(q);
+    var filtered = nq
+      ? items.filter(function(p) {
+          var full = norm(p[0] + ' ' + p[1]);
+          var nom  = norm(p[1]);
+          var pre  = norm(p[0]);
+          return full.indexOf(nq) !== -1 || nom.indexOf(nq) === 0 || pre.indexOf(nq) === 0;
+        })
+      : items;
+
+    nameListEl.innerHTML = '';
+
+    if (!filtered.length) {
+      var msg = document.createElement('p');
+      msg.className = 'px-4 py-3 text-sm italic';
+      msg.style.color = 'rgba(34,21,16,.4)';
+      msg.textContent = 'Aucun résultat pour « ' + q + ' »';
+      nameListEl.appendChild(msg);
+      return;
+    }
+
+    filtered.forEach(function(p) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('role', 'option');
+      btn.className = 'name-item';
+      var nameSpan = document.createElement('span');
+      nameSpan.textContent = p[0] + ' ' + p[1];
+      var badge = document.createElement('span');
+      badge.style.cssText = 'font-size:.7rem;color:rgba(34,21,16,.35);flex-shrink:0;font-weight:600;letter-spacing:.04em;';
+      badge.textContent = currentClasse;
+      btn.appendChild(nameSpan);
+      btn.appendChild(badge);
+      btn.addEventListener('click', function() { choisirNom(p[0], p[1]); });
+      nameListEl.appendChild(btn);
+    });
+  }
+
+  /* Sélectionne un nom */
+  function choisirNom(prenom, nom) {
+    nomInput.value    = nom.trim();
+    prenomInput.value = prenom.trim();
+    selText.textContent = prenom.trim() + ' ' + nom.trim();
+    selCard.classList.remove('hidden');
+    nameListEl.classList.add('hidden');
+    nameSearch.value = '';
+    /* Déclenche la vérification Supabase */
+    prenomInput.dispatchEvent(new Event('blur'));
+  }
+
+  /* Efface la sélection */
+  function effacerSelection() {
+    nomInput.value    = '';
+    prenomInput.value = '';
+    selCard.classList.add('hidden');
+    nameListEl.classList.remove('hidden');
+    nameSearch.value = '';
+    afficherBannerStatut('idle');
+    appliquerEtat({statut: 'nouveau'});
+    vState = {statut: 'idle'};
+    renderList('');
+  }
+
+  /* Active une classe */
+  function activerClasse(classe) {
+    currentClasse = classe;
+    document.querySelectorAll('.classe-tab').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.classe === classe);
+      b.setAttribute('aria-pressed', b.dataset.classe === classe ? 'true' : 'false');
+    });
+    /* Reset nom + état */
+    nomInput.value    = '';
+    prenomInput.value = '';
+    afficherBannerStatut('idle');
+    appliquerEtat({statut: 'nouveau'});
+    vState = {statut: 'idle'};
+
+    if (classe === 'ALUMNI') {
+      pickerBlock.classList.add('hidden');
+      nomPrenomFields.classList.remove('hidden');
+      if (profilSection) profilSection.classList.remove('hidden');
+    } else {
+      pickerBlock.classList.remove('hidden');
+      nomPrenomFields.classList.add('hidden');
+      if (profilSection) profilSection.classList.add('hidden');
+      selCard.classList.add('hidden');
+      nameListEl.classList.remove('hidden');
+      nameSearch.value = '';
+      renderList('');
+    }
+  }
+
+  /* Events */
+  document.querySelectorAll('.classe-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() { activerClasse(this.dataset.classe); });
+  });
+
+  nameSearch.addEventListener('input', function() {
+    selCard.classList.add('hidden');
+    nameListEl.classList.remove('hidden');
+    renderList(this.value.trim());
+  });
+
+  clearBtn.addEventListener('click', effacerSelection);
+
+  /* Init par défaut */
+  activerClasse('DUT 1');
+})();
+
+/* ══════════════════════════════════════════
+   TOGGLE PROFIL (manuel, ignoré si partiel/complet)
+   ══════════════════════════════════════════ */
+(function setupProfil() {
+  var blocAncien  = document.getElementById('blocAncien');
+  var blocNouveau = document.getElementById('blocNouveau');
+  document.querySelectorAll('input[name="profil"]').forEach(function(r) {
+    r.addEventListener('change', function(e) {
+      if (vState.statut === 'partiel' || vState.statut === 'complet') return;
+      var isAncien = e.target.value === 'ancien';
+      blocAncien.classList.toggle('hidden', !isAncien);
+      blocNouveau.classList.toggle('hidden', isAncien);
+      saveDraft();
+    });
+  });
+})();
+
+/* ══════════════════════════════════════════
+   RESTE À PAYER
+   ══════════════════════════════════════════ */
+(function setupReste() {
+  var input  = document.getElementById('montantVerse');
+  var reste  = document.getElementById('resteAffiche');
+  var notice = document.getElementById('reliquatInfo');
+  input.addEventListener('input', function() {
+    var v = Math.max(0, Math.min(10000, Number(input.value) || 0));
+    var r = Math.max(0, 10000 - v);
+    reste.textContent = r.toLocaleString('fr-FR') + ' F CFA';
+    notice.classList.toggle('hidden', r === 0);
+    saveDraft();
+  });
+})();
+
+/* ══════════════════════════════════════════
+   VALIDATION FICHIER UPLOAD
+   ══════════════════════════════════════════ */
+(function setupFileValidation() {
+  var input       = document.getElementById('capture');
+  var zone        = document.getElementById('captureZone');
+  var emptyState  = document.getElementById('captureEmpty');
+  var selState    = document.getElementById('captureSelected');
+  var fileNameEl  = document.getElementById('captureFileName');
+  var fileSizeEl  = document.getElementById('captureFileSize');
+  var clearBtn    = document.getElementById('captureClear');
+  var dragOverlay = document.getElementById('captureDragOverlay');
+
+  function formatSize(bytes) {
+    if (bytes < 1024)       return bytes + ' o';
+    if (bytes < 1048576)    return (bytes / 1024).toFixed(0) + ' Ko';
+    return (bytes / 1048576).toFixed(1) + ' Mo';
+  }
+
+  function applyFile(file) {
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      showError('Format non supporté. Utilisez JPEG, PNG, WebP ou HEIC.');
+      return false;
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      showError('Le fichier dépasse 8 Mo. Réduisez sa taille avant de le joindre.');
+      return false;
+    }
+    clearError();
+    fileNameEl.textContent = file.name;
+    fileSizeEl.textContent = formatSize(file.size);
+    emptyState.classList.add('hidden');
+    selState.classList.remove('hidden');
+    zone.style.borderStyle = 'solid';
+    zone.style.borderColor = 'rgba(47,77,58,.4)';
+    zone.style.background  = 'rgba(47,77,58,.06)';
+    return true;
+  }
+
+  function resetZone() {
+    input.value = '';
+    emptyState.classList.remove('hidden');
+    selState.classList.add('hidden');
+    zone.style.borderStyle = '';
+    zone.style.borderColor = '';
+    zone.style.background  = '';
+  }
+
+  /* Clic sur la zone → ouvre le sélecteur */
+  zone.addEventListener('click', function(e) {
+    if (e.target === clearBtn || clearBtn.contains(e.target)) return;
+    input.click();
+  });
+
+  /* Clavier (Enter/Space) */
+  zone.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+  });
+
+  /* Changement via sélecteur natif */
+  input.addEventListener('change', function() {
+    var file = input.files[0];
+    if (!file) return;
+    applyFile(file);
+  });
+
+  /* Bouton supprimer */
+  clearBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    resetZone();
+  });
+
+  /* Drag & Drop */
+  zone.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    dragOverlay.classList.remove('hidden');
+  });
+  zone.addEventListener('dragleave', function() {
+    dragOverlay.classList.add('hidden');
+  });
+  zone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    dragOverlay.classList.add('hidden');
+    var file = e.dataTransfer.files[0];
+    if (!file) return;
+    /* Injecter dans l'input natif pour la soumission */
+    var dt = new DataTransfer();
+    dt.items.add(file);
+    input.files = dt.files;
+    applyFile(file);
+  });
+})();
+
+/* ══════════════════════════════════════════
+   DRAFT — SAUVEGARDE LOCALE
+   ══════════════════════════════════════════ */
+function saveDraft() {
+  try {
+    var form = document.getElementById('regForm');
+    var draft = {
+      profil:       form.profil.value,
+      nom:          getVal('nom'),
+      prenom:       getVal('prenom'),
+      whatsapp:     getVal('whatsapp'),
+      montantVerse: getVal('montantVerse'),
+      preuveAncien: getVal('preuveAncien'),
+      idTransaction:getVal('idTransaction'),
+      menuState:    JSON.parse(JSON.stringify(menuState)),
+      savedAt:      Date.now(),
+    };
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+  } catch(e) {}
+}
+
+function loadDraft() {
+  try {
+    var raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return;
+    var draft = JSON.parse(raw);
+    if (!draft.savedAt || (Date.now() - draft.savedAt) > 7 * 86400 * 1000) { clearDraft(); return; }
+
+    setVal('nom',           draft.nom);
+    setVal('prenom',        draft.prenom);
+    setVal('whatsapp',      draft.whatsapp);
+    setVal('montantVerse',  draft.montantVerse);
+    setVal('preuveAncien',  draft.preuveAncien);
+    setVal('idTransaction', draft.idTransaction);
+
+    if (draft.profil) {
+      var r = document.querySelector('input[name="profil"][value="' + draft.profil + '"]');
+      if (r) { r.checked = true; r.dispatchEvent(new Event('change', {bubbles:true})); }
+    }
+    if (draft.menuState) {
+      Object.assign(menuState, draft.menuState);
+      renderMenu();
+    }
+
+    var hasData = draft.nom || draft.prenom || draft.whatsapp;
+    if (hasData) document.getElementById('draftNotice').classList.remove('hidden');
+  } catch(e) {}
+}
+
+function clearDraft() {
+  try { localStorage.removeItem(DRAFT_KEY); } catch(e) {}
+  document.getElementById('draftNotice').classList.add('hidden');
+}
+
+function getVal(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+function setVal(id, val) { var el = document.getElementById(id); if (el && val) el.value = val; }
+
+/* Attacher saveDraft aux inputs texte */
+['nom','prenom','whatsapp','montantVerse','preuveAncien','idTransaction'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', saveDraft);
+});
+loadDraft();
+
+/* ══════════════════════════════════════════
+   HELPERS MESSAGES
+   ══════════════════════════════════════════ */
+function showError(msg) {
+  var el = document.getElementById('formError');
+  el.textContent = msg;
+  el.classList.remove('hidden');
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function clearError() {
+  var el = document.getElementById('formError');
+  el.classList.add('hidden');
+  el.textContent = '';
+}
+
+/* ══════════════════════════════════════════
+   SOUMISSION DU FORMULAIRE
+   ══════════════════════════════════════════ */
+(function setupSubmit() {
+  var form        = document.getElementById('regForm');
+  var formError   = document.getElementById('formError');
+  var formSuccess = document.getElementById('formSuccess');
+  var submitBtn   = document.getElementById('submitBtn');
+  var submitLbl   = document.getElementById('submitLabel');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    formError.classList.add('hidden');
+    formSuccess.classList.add('hidden');
+
+    /* ── Bloquer si l'inscription est déjà complète ── */
+    if (vState.statut === 'complet') return;
+
+    var nom      = getVal('nom').trim();
+    var prenom   = getVal('prenom').trim();
+    var whatsapp = getVal('whatsapp').trim();
+    var errors   = [];
+
+    if (!nom)      errors.push('Le nom est obligatoire.');
+    if (!prenom)   errors.push('Le prénom est obligatoire.');
+    if (!whatsapp) errors.push('Le numéro WhatsApp est obligatoire.');
+    if (window.__menuTotal !== MENU_TARGET) {
+      errors.push('Votre commande doit être exactement 5 000 F CFA.');
+    }
+
+    var idTransaction  = getVal('idTransaction').trim();
+    var captureFile    = document.getElementById('capture').files[0];
+    var profil         = (vState.statut === 'partiel') ? 'partiel' : form.profil.value;
+    var preuveAncien   = getVal('preuveAncien').trim();
+    var montantVerseVal= null, reste = null;
+
+    if (vState.statut === 'partiel') {
+      /* Solde : seul l'ID de transaction ou la capture est requis */
+      if (!idTransaction && !captureFile) {
+        errors.push("Renseignez le numéro de transaction ou joignez une capture d'écran.");
+      }
+    } else if (profil === 'ancien') {
+      var mvEl = document.getElementById('montantVerse');
+      montantVerseVal = Math.max(0, Math.min(10000, Number(mvEl.value) || 0));
+      reste = Math.max(0, 10000 - montantVerseVal);
+      if (!mvEl.value)   errors.push("Indiquez le montant déjà versé.");
+      if (!preuveAncien) errors.push("Indiquez à qui / comment l'argent a été remis.");
+    } else {
+      if (!idTransaction && !captureFile) {
+        errors.push("Renseignez le numéro de transaction ou joignez une capture d'écran.");
+      }
+    }
+
+    if (errors.length) {
+      formError.textContent = errors.join(' ');
+      formError.classList.remove('hidden');
+      formError.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitLbl.textContent = 'Envoi en cours…';
+
+    try {
+      /* 1. Upload capture si présente */
+      var captureUrl = null;
+      if (captureFile) {
+        var safeName  = Date.now() + '_' + captureFile.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+        var storageRes = await supabase.storage.from('captures').upload(safeName, captureFile, {upsert:false});
+        if (storageRes.error) throw new Error('Upload capture : ' + storageRes.error.message);
+        captureUrl = storageRes.data.path;
+      }
+
+      /* 2a. Solde d'une inscription partielle */
+      if (vState.statut === 'partiel') {
+        var justif = idTransaction || preuveAncien || '';
+        var rpc = await supabase.rpc('solder_inscription', {
+          p_id:           vState.inscriptionId,
+          p_nom:          nom,
+          p_prenom:       prenom,
+          p_justificatif: justif,
+          p_capture_url:  captureUrl,
+        });
+        if (rpc.error) throw new Error(rpc.error.message);
+        if (!rpc.data || rpc.data.success === false) throw new Error(rpc.data && rpc.data.error || 'Erreur de mise à jour.');
+
+        /* Succès solde */
+        afficherBannerStatut('complet');
+        document.getElementById('formBody').classList.add('hidden');
+        formSuccess.innerHTML =
+          '<strong>Solde réglé — inscription complète !</strong><br>'
+          + 'Votre cotisation de 10 000 F CFA est désormais entièrement enregistrée. '
+          + 'On vous retrouve le <strong>18 juillet</strong> à Yendu Bi !';
+
+      /* 2b. Nouvelle inscription */
+      } else {
+        var dbRes = await supabase.from('inscriptions').insert({
+          nom:           nom,
+          prenom:        prenom,
+          whatsapp:      whatsapp,
+          profil:        profil,
+          montant_verse: profil === 'ancien' ? montantVerseVal : 10000,
+          reste_a_payer: profil === 'ancien' ? reste : 0,
+          justificatif:  profil === 'ancien' ? preuveAncien : (idTransaction || null),
+          commande:      window.__menuDetail || '',
+          capture_url:   captureUrl,
+        });
+        if (dbRes.error) throw new Error(dbRes.error.message);
+
+        /* Succès nouvelle inscription */
+        clearDraft();
+        form.reset();
+        Object.assign(menuState, {
+          plat:'filet', accomp1:'frites', accomp2:'oignon',
+          snackBase:'burger-viande', snackDrink:'pressea', pizzaBase:'reine', pizzaComp:'frites',
+        });
+        renderMenu();
+        document.getElementById('blocAncien').classList.add('hidden');
+        document.getElementById('blocNouveau').classList.remove('hidden');
+        vState = {statut: 'idle'};
+        afficherBannerStatut('idle');
+
+        /* Message adapté selon profil */
+        if (profil === 'ancien' && reste > 0) {
+          formSuccess.innerHTML =
+            '<strong>Acompte enregistré !</strong><br>'
+            + 'Il vous restera <strong>' + reste.toLocaleString('fr-FR') + ' F CFA</strong> à solder avant le 18 juillet. '
+            + "Revenez sur cette page et saisissez votre nom pour compléter votre inscription.";
+        } else {
+          formSuccess.innerHTML =
+            '<strong>Inscription envoyée avec succès !</strong><br>'
+            + "Votre statut sera vérifié par la commission. Conservez votre preuve de paiement.";
+        }
+      }
+
+      formSuccess.classList.remove('hidden');
+      formSuccess.scrollIntoView({behavior:'smooth', block:'center'});
+      submitLbl.textContent = 'Envoyé ✓';
+      /* bouton reste désactivé — anti double-envoi */
+
+    } catch(err) {
+      formError.textContent = err.message || "Erreur d'envoi. Vérifiez votre connexion ou contactez la commission.";
+      formError.classList.remove('hidden');
+      formError.scrollIntoView({behavior:'smooth', block:'center'});
+      submitBtn.disabled = false;
+      submitLbl.textContent = vState.statut === 'partiel' ? 'Solder mon inscription' : 'Valider mon inscription';
+    }
+  });
+})();
+</script>
+</body>
+</html>
