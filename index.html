@@ -759,6 +759,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
           <button type="button" class="classe-tab" data-classe="MAME 2">MAME 2</button>
           <button type="button" class="classe-tab" data-classe="MAME 3">MAME 3</button>
           <button type="button" class="classe-tab" data-classe="ALUMNI">ALUMNI</button>
+          <button type="button" class="classe-tab" data-classe="PRIVÉ">Privé</button>
         </div>
       </div>
 
@@ -2001,7 +2002,7 @@ function planifierVerification() {
     appliquerEtat({statut: 'nouveau'});
     vState = {statut: 'idle'};
 
-    if (classe === 'ALUMNI') {
+    if (classe === 'ALUMNI' || classe === 'PRIVÉ') {
       pickerBlock.classList.add('hidden');
       nomPrenomFields.classList.remove('hidden');
       if (profilSection) profilSection.classList.remove('hidden');
