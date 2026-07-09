@@ -534,6 +534,10 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
   object-position: center;
   display: block;
 }
+.partner-tile--contain img {
+  object-fit: contain;
+  padding: .75rem;
+}
 
 /* Trait décoratif sous le titre */
 .partners-rule {
@@ -1281,7 +1285,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
              alt="SALAS Beauty Concept"
              loading="lazy" width="130" height="130">
       </div>
-      <div class="partner-tile">
+      <div class="partner-tile partner-tile--contain" style="background:#0d0d0d;">
         <img src="logos/partners/samacoach.jpg"
              alt="SamaCoach"
              loading="lazy" width="130" height="130">
@@ -1328,7 +1332,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
       <div class="partner-tile" aria-hidden="true">
         <img src="logos/partners/salas.jpg"         alt="" loading="lazy" width="130" height="130">
       </div>
-      <div class="partner-tile" aria-hidden="true">
+      <div class="partner-tile partner-tile--contain" aria-hidden="true" style="background:#0d0d0d;">
         <img src="logos/partners/samacoach.jpg"     alt="" loading="lazy" width="130" height="130">
       </div>
       <div class="partner-tile" aria-hidden="true">
