@@ -462,7 +462,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
   content: '';
   position: absolute;
   top: 0; bottom: 0;
-  width: 100px;
+  width: 48px;
   z-index: 2;
   pointer-events: none;
 }
@@ -474,7 +474,11 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
   right: 0;
   background: linear-gradient(to left, #EFE6D2 0%, transparent 100%);
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .partners-scroll-wrap::before,
+  .partners-scroll-wrap::after { width: 100px; }
+}
+@media (min-width: 1024px) {
   .partners-scroll-wrap::before,
   .partners-scroll-wrap::after { width: 160px; }
 }
@@ -486,7 +490,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
   gap: 1.25rem;
   padding: 1.5rem 0;
   width: max-content;
-  animation: partners-scroll 38s linear infinite;
+  animation: partners-scroll 25s linear infinite;
   will-change: transform;
 }
 .partners-scroll-wrap:hover .partners-track {
@@ -500,9 +504,9 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
 /* Tuile individuelle */
 .partner-tile {
   position: relative;
-  width: 130px;
-  height: 130px;
-  border-radius: 1.125rem;
+  width: 96px;
+  height: 96px;
+  border-radius: .875rem;
   overflow: hidden;
   flex-shrink: 0;
   background: #221510;
@@ -557,6 +561,14 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
 }
 .partners-rule::after {
   background: linear-gradient(to left, transparent, rgba(217,164,65,.5));
+}
+
+@media (min-width: 640px) {
+  .partner-tile {
+    width: 130px;
+    height: 130px;
+    border-radius: 1.125rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
