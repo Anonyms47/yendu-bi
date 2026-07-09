@@ -447,6 +447,117 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
 }
 .name-item:hover, .name-item:focus-visible { background: rgba(140,47,38,.06); outline: none; }
 .name-item:focus-visible { box-shadow: inset 0 0 0 2px #8C2F26; }
+
+/* ─────────────────────────────────────────
+   PARTENAIRES — CAROUSEL INFINI
+───────────────────────────────────────── */
+
+/* Masques de fondu sur les bords */
+.partners-scroll-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.partners-scroll-wrap::before,
+.partners-scroll-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.partners-scroll-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #EFE6D2 0%, transparent 100%);
+}
+.partners-scroll-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #EFE6D2 0%, transparent 100%);
+}
+@media (min-width: 768px) {
+  .partners-scroll-wrap::before,
+  .partners-scroll-wrap::after { width: 160px; }
+}
+
+/* Track animé */
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  width: max-content;
+  animation: partners-scroll 38s linear infinite;
+  will-change: transform;
+}
+.partners-scroll-wrap:hover .partners-track {
+  animation-play-state: paused;
+}
+@keyframes partners-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Tuile individuelle */
+.partner-tile {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #221510;
+  box-shadow: 0 2px 14px rgba(34,21,16,.10);
+  transition: transform .32s cubic-bezier(.23,1,.32,1),
+              box-shadow  .32s cubic-bezier(.23,1,.32,1);
+}
+.partner-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(34,21,16,.08);
+  pointer-events: none;
+  transition: box-shadow .32s;
+}
+.partner-tile:hover {
+  transform: translateY(-7px) scale(1.07);
+  box-shadow: 0 24px 48px -8px rgba(34,21,16,.26),
+              0 8px 18px -4px rgba(34,21,16,.14);
+}
+.partner-tile:hover::after {
+  box-shadow: inset 0 0 0 2px rgba(217,164,65,.65);
+}
+.partner-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Trait décoratif sous le titre */
+.partners-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+.partners-rule::before,
+.partners-rule::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(217,164,65,.5));
+}
+.partners-rule::after {
+  background: linear-gradient(to left, transparent, rgba(217,164,65,.5));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-track { animation: none; }
+}
 </style>
 </head>
 <body class="font-body text-ink antialiased">
@@ -469,9 +580,10 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide"
            aria-label="Navigation principale">
-        <a href="#lieu"        class="nav-link hover:text-rouge transition-colors focus-ring">Le lieu</a>
+        <a href="#lieu"         class="nav-link hover:text-rouge transition-colors focus-ring">Le lieu</a>
         <a href="#programme"   class="nav-link hover:text-rouge transition-colors focus-ring">Programme</a>
         <a href="#inscription" class="nav-link hover:text-rouge transition-colors focus-ring">Inscription</a>
+        <a href="#partenaires" class="nav-link hover:text-rouge transition-colors focus-ring">Partenaires</a>
       </nav>
 
       <a href="#inscription"
@@ -1111,6 +1223,128 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
 
   </form>
 </section>
+
+
+<div class="weave-divider" aria-hidden="true"></div>
+
+
+<!-- ════════════════════════════════════════
+     PARTENAIRES
+════════════════════════════════════════ -->
+<section id="partenaires" aria-labelledby="partenaires-heading" class="py-16 overflow-hidden">
+
+  <!-- En-tête -->
+  <div class="fade-up text-center px-5 mb-12">
+    <p class="font-script text-2xl text-or mb-2">Avec le soutien de</p>
+    <h2 id="partenaires-heading"
+        class="font-display font-black text-4xl sm:text-5xl">
+      Nos Partenaires
+    </h2>
+    <div class="partners-rule" aria-hidden="true">
+      <svg width="6" height="6" viewBox="0 0 6 6" fill="#D9A441"><circle cx="3" cy="3" r="3"/></svg>
+    </div>
+    <p class="mt-4 text-ink/60 text-sm max-w-xs mx-auto leading-relaxed">
+      Des entrepreneurs et des marques qui croient en ce projet.
+    </p>
+  </div>
+
+  <!-- Carousel infini -->
+  <div class="partners-scroll-wrap fade-up"
+       role="region"
+       aria-label="Galerie des partenaires — défilement automatique">
+
+    <div class="partners-track">
+
+      <!-- ── Première série ── -->
+      <div class="partner-tile">
+        <img src="logos/partners/cistech.jpg"
+             alt="CIS-TECH — La Technologie à portée de main"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/ker-soxna-mai.jpg"
+             alt="Kër Soxna Maï — Yaye Fallement"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/anoura.jpg"
+             alt="Anoura"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/elmas.jpg"
+             alt="ELMAS"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/salas.jpg"
+             alt="SALAS Beauty Concept"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/samacoach.jpg"
+             alt="SamaCoach"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/yaafah.jpg"
+             alt="Yaafah"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/hadeejart.jpg"
+             alt="Hadeej'Art"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/drifty.jpg"
+             alt="Drifty Solution"
+             loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile">
+        <img src="logos/partners/zahra-shop.jpg"
+             alt="Zahra Shop Cosmetics"
+             loading="lazy" width="130" height="130">
+      </div>
+
+      <!-- ── Deuxième série (boucle infinie) ── -->
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/cistech.jpg"       alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/ker-soxna-mai.jpg" alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/anoura.jpg"        alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/elmas.jpg"         alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/salas.jpg"         alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/samacoach.jpg"     alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/yaafah.jpg"        alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/hadeejart.jpg"     alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/drifty.jpg"        alt="" loading="lazy" width="130" height="130">
+      </div>
+      <div class="partner-tile" aria-hidden="true">
+        <img src="logos/partners/zahra-shop.jpg"    alt="" loading="lazy" width="130" height="130">
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<div class="weave-divider" aria-hidden="true"></div>
 
 
 <!-- ════════════════════════════════════════
