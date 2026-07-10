@@ -1082,15 +1082,15 @@ a.partner-tile { text-decoration:none; cursor:pointer; }
           Votre menu
         </legend>
         <p class="text-xs text-ink/50 ml-9 mb-5">
-          Composez votre repas pour une valeur exacte de <strong>5 000 F</strong>.
+          Choisissez votre plat et complétez votre menu.
         </p>
         <div id="menuBuilder" class="space-y-5"></div>
         <div class="mt-5">
           <div id="totalBox"
-               class="flex items-center justify-between rounded-2xl px-5 py-4 border-2 font-bold
+               class="flex items-center gap-3 rounded-2xl px-5 py-4 border-2 font-bold
                       bg-white shadow-md transition-all duration-300">
-            <span class="text-sm font-bold">Total commande</span>
-            <span id="totalAffiche" class="font-display text-2xl">0 F</span>
+            <span id="totalAffiche" class="text-xl">○</span>
+            <span class="text-sm font-bold" id="totalLabel">Menu non complété</span>
           </div>
           <p id="totalMsg" class="text-sm mt-2.5 text-rouge font-semibold min-h-[1.25rem]"
              role="alert" aria-live="polite"></p>
@@ -1756,14 +1756,9 @@ function renderMenu() {
     txt.className = 'font-semibold text-sm leading-snug';
     txt.textContent = opt.label;
 
-    var price = document.createElement('span');
-    price.className = 'text-xs text-ink/50 font-bold whitespace-nowrap flex-shrink-0';
-    price.textContent = opt.price;
-
     left.appendChild(radio);
     left.appendChild(txt);
     lbl.appendChild(left);
-    lbl.appendChild(price);
     grid.appendChild(lbl);
   });
 
@@ -1796,20 +1791,20 @@ function renderSubOptions() {
     box.appendChild(grid);
 
   } else if (menuState.plat === 'snack') {
-    grid.appendChild(buildSubGroup('Base (3 000 F)', 'snackBase', [
+    grid.appendChild(buildSubGroup('Base', 'snackBase', [
       ['burger-viande','Burger viande'],['burger-crispy','Burger crispy'],
       ['tacos-poulet','Tacos poulet'],['tacos-viande','Tacos viande'],['tacos-hotdog','Tacos hot dog'],
     ], menuState.snackBase));
-    grid.appendChild(buildSubGroup('Boisson (1 000 F) · frites incluses (1 000 F)', 'snackDrink', [
+    grid.appendChild(buildSubGroup('Boisson · frites incluses', 'snackDrink', [
       ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],
     ], menuState.snackDrink));
     box.appendChild(grid);
 
   } else if (menuState.plat === 'pizza') {
-    grid.appendChild(buildSubGroup('Pizza PM (4 000 F)', 'pizzaBase', [
+    grid.appendChild(buildSubGroup('Pizza PM', 'pizzaBase', [
       ['reine','Reine'],['margarite','Margarite'],['4fromages','4 Fromages'],['yendibi','Spéciale Yendi Bi'],
     ], menuState.pizzaBase));
-    grid.appendChild(buildSubGroup('Complément (1 000 F)', 'pizzaComp', [
+    grid.appendChild(buildSubGroup('Complément', 'pizzaComp', [
       ['frites','Frites'],['boisson','Boisson au choix'],
     ], menuState.pizzaComp));
     box.appendChild(grid);
@@ -1889,20 +1884,23 @@ function computeTotal() {
   window.__menuDetail = detail;
 
   var affiche = document.getElementById('totalAffiche');
+  var label   = document.getElementById('totalLabel');
   var box     = document.getElementById('totalBox');
   var msg     = document.getElementById('totalMsg');
   if (!affiche || !box || !msg) return;
 
-  affiche.textContent = total.toLocaleString('fr-FR') + ' F';
-
   if (total === MENU_TARGET) {
+    affiche.textContent    = '✓';
+    if (label) label.textContent = 'Menu complet';
     box.style.background   = 'rgba(47,77,58,.1)';
     box.style.borderColor  = '#2F4D3A';
     msg.textContent = '';
   } else {
+    affiche.textContent    = '○';
+    if (label) label.textContent = 'Menu non complété';
     box.style.background   = 'rgba(140,47,38,.08)';
     box.style.borderColor  = '#8C2F26';
-    msg.textContent = 'Le total doit être exactement 5 000 F (actuellement ' + total.toLocaleString('fr-FR') + ' F).';
+    msg.textContent = total === 0 ? '' : 'Veuillez compléter votre sélection.';
   }
 }
 renderMenu();
@@ -2546,7 +2544,7 @@ function clearError() {
     if (!prenom)   errors.push('Le prénom est obligatoire.');
     if (!whatsapp) errors.push('Le numéro WhatsApp est obligatoire.');
     if (window.__menuTotal !== MENU_TARGET) {
-      errors.push('Votre commande doit être exactement 5 000 F CFA.');
+      errors.push('Veuillez compléter votre sélection de menu.');
     }
 
     var idTransaction  = getVal('idTransaction').trim();
