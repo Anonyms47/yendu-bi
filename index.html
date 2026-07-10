@@ -418,35 +418,8 @@ input[type="radio"], input[type="checkbox"] { accent-color: #8C2F26; }
 }
 .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
 
-/* ── Sélecteur de classe ── */
-.classe-tab {
-  padding: .4rem .95rem;
-  border-radius: 9999px;
-  font-size: .8rem;
-  font-weight: 700;
-  border: 2px solid rgba(34,21,16,.15);
-  background: transparent;
-  cursor: pointer;
-  transition: border-color .18s, background .18s, color .18s;
-  color: rgba(34,21,16,.6);
-  font-family: inherit;
-}
-.classe-tab:hover { border-color: rgba(140,47,38,.45); color: #8C2F26; background: rgba(140,47,38,.06); }
-.classe-tab.active { border-color: #8C2F26; background: #8C2F26; color: #EFE6D2; }
-.classe-tab:focus-visible { outline: 2px solid #8C2F26; outline-offset: 2px; }
-
-/* ── Items de la liste de noms ── */
-.name-item {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: .75rem; padding: .6rem 1rem;
-  font-size: .875rem; font-weight: 500;
-  width: 100%; text-align: left;
-  background: transparent; border: 0;
-  cursor: pointer;
-  transition: background .15s;
-}
-.name-item:hover, .name-item:focus-visible { background: rgba(140,47,38,.06); outline: none; }
-.name-item:focus-visible { box-shadow: inset 0 0 0 2px #8C2F26; }
+/* ── Select classe ── */
+select.form-input { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(34,21,16,.45)' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; cursor:pointer; }
 
 /* ─────────────────────────────────────────
    PARTENAIRES — CAROUSEL INFINI
@@ -880,56 +853,20 @@ a.partner-tile { text-decoration:none; cursor:pointer; }
 
       <!-- Sélecteur de classe -->
       <div class="mb-5">
-        <p class="text-sm font-semibold mb-3" style="color:rgba(34,21,16,.55)">Votre classe</p>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Sélectionnez votre classe">
-          <button type="button" class="classe-tab" data-classe="DUT 1">DUT 1</button>
-          <button type="button" class="classe-tab" data-classe="DUT 2">DUT 2</button>
-          <button type="button" class="classe-tab" data-classe="MAME 1">MAME 1</button>
-          <button type="button" class="classe-tab" data-classe="MAME 2">MAME 2</button>
-          <button type="button" class="classe-tab" data-classe="MAME 3">MAME 3</button>
-          <button type="button" class="classe-tab" data-classe="ALUMNI">ALUMNI</button>
-          <button type="button" class="classe-tab" data-classe="PRIVÉ">Privé</button>
-        </div>
+        <label class="block text-sm font-semibold mb-2" for="classeSelect" style="color:rgba(34,21,16,.55)">Votre classe</label>
+        <select id="classeSelect" name="classe" class="form-input focus-ring" aria-label="Sélectionnez votre classe">
+          <option value="">— Choisir une classe —</option>
+          <option value="DUT 1">DUT 1</option>
+          <option value="DUT 2">DUT 2</option>
+          <option value="MAME 1">MAME 1</option>
+          <option value="MAME 2">MAME 2</option>
+          <option value="MAME 3">MAME 3</option>
+          <option value="ALUMNI">ALUMNI</option>
+        </select>
       </div>
 
-      <!-- Picker — DUT / MAME (liste intelligente) -->
-      <div id="pickerBlock" class="hidden space-y-2 mb-5">
-        <div class="relative">
-          <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
-               width="15" height="15" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2.5"
-               style="color:rgba(34,21,16,.35)" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input type="text" id="nameSearch"
-                 placeholder="Tapez votre nom pour filtrer…"
-                 autocomplete="off" spellcheck="false"
-                 aria-label="Rechercher votre nom dans la liste de la classe"
-                 aria-controls="nameList"
-                 class="form-input focus-ring" style="padding-left:2.6rem;">
-        </div>
-        <div id="nameList"
-             class="max-h-56 overflow-y-auto rounded-xl border border-ink/10 divide-y divide-ink/5 bg-white/50"
-             role="listbox" aria-label="Liste des noms de la classe">
-        </div>
-        <!-- Nom sélectionné -->
-        <div id="selectedNameCard"
-             class="hidden flex items-center gap-3 px-4 py-3 rounded-xl border-2"
-             style="background:rgba(47,77,58,.08);border-color:rgba(47,77,58,.25);">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-               stroke="#2F4D3A" stroke-width="2.5" aria-hidden="true">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          <span class="flex-1 font-bold text-sm text-ink" id="selectedNameText"></span>
-          <button type="button" id="clearNameSelection"
-                  class="text-xs font-semibold underline focus-ring"
-                  style="color:rgba(34,21,16,.45)">Changer</button>
-        </div>
-      </div>
-
-      <!-- Nom + Prénom — dans le DOM en permanence (visibles pour ALUMNI, cachés sinon) -->
-      <div id="nomPrenomFields" class="hidden grid sm:grid-cols-2 gap-4 mb-5">
+      <!-- Nom + Prénom -->
+      <div id="nomPrenomFields" class="grid sm:grid-cols-2 gap-4 mb-5">
         <div>
           <label class="block text-sm font-bold mb-2" for="nom">
             Nom <span class="text-rouge" aria-hidden="true">*</span>
@@ -2048,10 +1985,34 @@ function planifierVerification() {
 })();
 
 /* ══════════════════════════════════════════
-   PICKER DE NOM PAR CLASSE
+   SÉLECTEUR DE CLASSE
    ══════════════════════════════════════════ */
-(function setupNamePicker() {
+(function setupClasseSelect() {
 
+  var select         = document.getElementById('classeSelect');
+  var nomPrenomFields= document.getElementById('nomPrenomFields');
+  var profilSection  = document.getElementById('profilSection');
+  var nomInput       = document.getElementById('nom');
+  var prenomInput    = document.getElementById('prenom');
+
+  /* Toujours afficher les champs nom/prénom */
+  nomPrenomFields.classList.remove('hidden');
+
+  select.addEventListener('change', function() {
+    /* Reset nom, prénom et état vérification */
+    nomInput.value    = '';
+    prenomInput.value = '';
+    afficherBannerStatut('idle');
+    appliquerEtat({statut: 'nouveau'});
+    vState = {statut: 'idle', inscriptionId: null, resteAPayer: 0, montantVerse: 0};
+    /* Toujours montrer le profil */
+    if (profilSection) profilSection.classList.remove('hidden');
+  });
+
+  /* Init */
+  if (profilSection) profilSection.classList.remove('hidden');
+
+  /* Garde la variable LISTE vide pour éviter toute référence résiduelle */
   var LISTE = {
     'DUT 1': [
       ['Fabrice Adama','AYESSOU'],['Papa Diery','BA'],['Mouhamed','BABOU'],
@@ -2181,135 +2142,6 @@ function planifierVerification() {
     ],
   };
 
-  var currentClasse  = null;
-  var pickerBlock    = document.getElementById('pickerBlock');
-  var nomPrenomFields= document.getElementById('nomPrenomFields');
-  var nameSearch     = document.getElementById('nameSearch');
-  var nameListEl     = document.getElementById('nameList');
-  var selCard        = document.getElementById('selectedNameCard');
-  var selText        = document.getElementById('selectedNameText');
-  var clearBtn       = document.getElementById('clearNameSelection');
-  var nomInput       = document.getElementById('nom');
-  var prenomInput    = document.getElementById('prenom');
-  var profilSection  = document.getElementById('profilSection');
-
-  /* Normalisation insensible à la casse et aux accents */
-  function norm(s) {
-    return (s || '').toLowerCase()
-      .normalize('NFD').replace(/[̀-ͯ]/g,'')
-      .replace(/\s+/g,' ').trim();
-  }
-
-  /* Affiche la liste filtrée */
-  function renderList(q) {
-    var items = LISTE[currentClasse] || [];
-    var nq = norm(q);
-    var filtered = nq
-      ? items.filter(function(p) {
-          var full = norm(p[0] + ' ' + p[1]);
-          var nom  = norm(p[1]);
-          var pre  = norm(p[0]);
-          return full.indexOf(nq) !== -1 || nom.indexOf(nq) === 0 || pre.indexOf(nq) === 0;
-        })
-      : items;
-
-    nameListEl.innerHTML = '';
-
-    if (!filtered.length) {
-      var msg = document.createElement('p');
-      msg.className = 'px-4 py-3 text-sm italic';
-      msg.style.color = 'rgba(34,21,16,.4)';
-      msg.textContent = 'Aucun résultat pour « ' + q + ' »';
-      nameListEl.appendChild(msg);
-      return;
-    }
-
-    filtered.forEach(function(p) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.setAttribute('role', 'option');
-      btn.className = 'name-item';
-      var nameSpan = document.createElement('span');
-      nameSpan.textContent = p[0] + ' ' + p[1];
-      var badge = document.createElement('span');
-      badge.style.cssText = 'font-size:.7rem;color:rgba(34,21,16,.35);flex-shrink:0;font-weight:600;letter-spacing:.04em;';
-      badge.textContent = currentClasse;
-      btn.appendChild(nameSpan);
-      btn.appendChild(badge);
-      btn.addEventListener('click', function() { choisirNom(p[0], p[1]); });
-      nameListEl.appendChild(btn);
-    });
-  }
-
-  /* Sélectionne un nom */
-  function choisirNom(prenom, nom) {
-    nomInput.value    = nom.trim();
-    prenomInput.value = prenom.trim();
-    selText.textContent = prenom.trim() + ' ' + nom.trim();
-    selCard.classList.remove('hidden');
-    nameListEl.classList.add('hidden');
-    nameSearch.value = '';
-    /* Déclenche la vérification Supabase */
-    prenomInput.dispatchEvent(new Event('blur'));
-  }
-
-  /* Efface la sélection */
-  function effacerSelection() {
-    nomInput.value    = '';
-    prenomInput.value = '';
-    selCard.classList.add('hidden');
-    nameListEl.classList.remove('hidden');
-    nameSearch.value = '';
-    afficherBannerStatut('idle');
-    appliquerEtat({statut: 'nouveau'});
-    vState = {statut: 'idle'};
-    renderList('');
-  }
-
-  /* Active une classe */
-  function activerClasse(classe) {
-    currentClasse = classe;
-    document.querySelectorAll('.classe-tab').forEach(function(b) {
-      b.classList.toggle('active', b.dataset.classe === classe);
-      b.setAttribute('aria-pressed', b.dataset.classe === classe ? 'true' : 'false');
-    });
-    /* Reset nom + état */
-    nomInput.value    = '';
-    prenomInput.value = '';
-    afficherBannerStatut('idle');
-    appliquerEtat({statut: 'nouveau'});
-    vState = {statut: 'idle'};
-
-    if (classe === 'ALUMNI' || classe === 'PRIVÉ') {
-      pickerBlock.classList.add('hidden');
-      nomPrenomFields.classList.remove('hidden');
-      if (profilSection) profilSection.classList.remove('hidden');
-    } else {
-      pickerBlock.classList.remove('hidden');
-      nomPrenomFields.classList.add('hidden');
-      if (profilSection) profilSection.classList.add('hidden');
-      selCard.classList.add('hidden');
-      nameListEl.classList.remove('hidden');
-      nameSearch.value = '';
-      renderList('');
-    }
-  }
-
-  /* Events */
-  document.querySelectorAll('.classe-tab').forEach(function(btn) {
-    btn.addEventListener('click', function() { activerClasse(this.dataset.classe); });
-  });
-
-  nameSearch.addEventListener('input', function() {
-    selCard.classList.add('hidden');
-    nameListEl.classList.remove('hidden');
-    renderList(this.value.trim());
-  });
-
-  clearBtn.addEventListener('click', effacerSelection);
-
-  /* Init par défaut */
-  activerClasse('DUT 1');
 })();
 
 /* ══════════════════════════════════════════
@@ -2540,6 +2372,8 @@ function clearError() {
     var whatsapp = getVal('whatsapp').trim();
     var errors   = [];
 
+    var classe = document.getElementById('classeSelect') ? document.getElementById('classeSelect').value : '';
+    if (!classe)   errors.push('Veuillez sélectionner votre classe.');
     if (!nom)      errors.push('Le nom est obligatoire.');
     if (!prenom)   errors.push('Le prénom est obligatoire.');
     if (!whatsapp) errors.push('Le numéro WhatsApp est obligatoire.');
