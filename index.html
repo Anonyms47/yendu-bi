@@ -1019,7 +1019,7 @@ a.partner-tile { text-decoration:none; cursor:pointer; }
           Votre menu
         </legend>
         <p class="text-xs text-ink/50 ml-9 mb-5">
-          Choisissez votre plat et complétez votre menu.
+          Choisissez votre formule et personnalisez-la.
         </p>
         <div id="menuBuilder" class="space-y-5"></div>
         <div class="mt-5">
@@ -1621,203 +1621,253 @@ setInterval(tickCountdown, 1000);
 })();
 
 /* ══════════════════════════════════════════
-   MENU BUILDER
+   MENU BUILDER — FORMULES
    ══════════════════════════════════════════ */
 var menuState = {
-  plat:       'filet',
-  accomp1:    'frites',
-  accomp2:    'oignon',
-  snackBase:  'burger-viande',
-  snackDrink: 'pressea',
-  pizzaBase:  'reine',
-  pizzaComp:  'frites',
+  combo:     '',
+  gpPlat: 'filet',  gpAccomp: 'frites', gpSauce: 'oignon',
+  gcPlat: 'foie',   gcAccomp: 'frites', gcSauce: 'oignon', gcExtra: '',
+  snPlat: 'burger-viande', snComp: '', snBoisson: '', snDessert: '', snPremium: '',
+  nhPlat: 'nuggets',       nhComp: '', nhBoisson: '', nhDessert: '', nhPremium: '',
+  pzPlat: 'reine',  pzExtra: '',
 };
 
-var PLAT_LABELS = {
-  filet: 'Brochette Filet',
-  taouk: 'Brochette Taouk Poulet',
-  mix:   'Brochette Mix',
+var COMBO_LABELS = {
+  gp:'Grillade Premium', gc:'Grillade Classic', sn:'Snacking', nh:'Nuggets & Hews', pz:'Pizza PM',
 };
-var ACCOMP_LABELS  = {frites:'Frites', riz:'Riz'};
-var SAUCE_LABELS   = {oignon:'Sauce oignon', yassa:'Sauce yassa'};
-var SNACK_BASE_LBL = {
+var COMBO_DESC = {
+  gp: 'Brochette filet, taouk ou mix · accompagnement · sauce',
+  gc: 'Brochette foie, kafta, haousa ou banquette · accompagnement · sauce · 1 extra offert',
+  sn: 'Burger ou Tacos · complément au choix',
+  nh: 'Nuggets (8p) ou Hews (6p) · complément au choix',
+  pz: 'Pizza individuelle · 1 extra offert',
+};
+var LBL = {
+  filet:'Brochette Filet', taouk:'Brochette Taouk Poulet', mix:'Brochette Mix',
+  foie:'Brochette Foie', kafta:'Brochette Kafta', haousa:'Brochette Haousa', banquette:'Banquette Poulet',
+  frites:'Frites', riz:'Riz', oignon:'Sauce oignon', yassa:'Sauce yassa',
+  glace:'Glace', popcorn:'Pop Corn', 'crepe-sucree':'Crêpe sucrée', 'gaufre-sucree':'Gaufre sucrée',
+  pressea:'Canette Pressea', kirene:'Kirène 1.5L', cafe:'Café Nespresso',
   'burger-viande':'Burger viande','burger-crispy':'Burger crispy',
   'tacos-poulet':'Tacos poulet','tacos-viande':'Tacos viande','tacos-hotdog':'Tacos hot dog',
+  'frites-boisson':'Frites + Boisson','frites-dessert':'Frites + Dessert','dessert-premium':'Dessert premium',
+  nuggets:'Nuggets (8 pièces)', hews:'Hews (6 pièces)',
+  'crepe-nutella':'Crêpe Nutella','gaufre-nutella':'Gaufre Nutella','milk-shake':'Milk Shake',
+  reine:'Pizza Reine', yendibi:'Yendi Bi', margarite:'Margarite', '4fromages':'4 Fromages',
 };
-var DRINK_LABELS    = {pressea:'Canette Pressea', kirene:'Kirène 1.5L'};
-var PIZZA_BASE_LBL  = {reine:'Pizza Reine', margarite:'Pizza Margarite', '4fromages':'Pizza 4 Fromages', yendibi:'Pizza Spéciale Yendi Bi'};
-var PIZZA_COMP_LBL  = {frites:'Frites', boisson:'Boisson au choix'};
 
 function renderMenu() {
   var builder = document.getElementById('menuBuilder');
   builder.innerHTML = '';
 
-  /* Options principales */
-  var mainOpts = [
-    {id:'filet', label:'Brochette Filet',                        price:'5 000 F'},
-    {id:'taouk', label:'Brochette Taouk Poulet',                 price:'5 000 F'},
-    {id:'mix',   label:'Brochette Mix',                          price:'5 000 F'},
-    {id:'snack', label:'Burger ou Tacos + frites + boisson',     price:'3 000 + 1 000 + 1 000 F'},
-    {id:'pizza', label:'Pizza PM + complément',                  price:'4 000 + 1 000 F'},
-  ];
-
+  var combos = ['gp','gc','sn','nh','pz'];
   var grid = document.createElement('div');
   grid.className = 'grid gap-2.5';
 
-  mainOpts.forEach(function(opt) {
+  combos.forEach(function(id) {
     var lbl = document.createElement('label');
     lbl.className = [
-      'ticket flex items-center justify-between gap-3 border-2 border-ink/15 rounded-xl px-4 py-4',
+      'ticket flex items-start gap-3 border-2 border-ink/15 rounded-xl px-4 py-4',
       'cursor-pointer bg-white/40 has-[:checked]:border-or has-[:checked]:bg-or/12',
       'transition-all hover:border-or/35 hover:bg-white/55',
     ].join(' ');
 
-    var left = document.createElement('span');
-    left.className = 'flex items-center gap-3 min-w-0';
-
     var radio = document.createElement('input');
-    radio.type = 'radio';
-    radio.name = 'platChoice';
-    radio.id   = 'plat-' + opt.id;
-    radio.value = opt.id;
-    radio.className = 'w-4 h-4 flex-shrink-0';
-    if (opt.id === menuState.plat) radio.checked = true;
+    radio.type = 'radio'; radio.name = 'comboChoice';
+    radio.value = id; radio.className = 'w-4 h-4 flex-shrink-0 mt-0.5';
+    if (id === menuState.combo) radio.checked = true;
     radio.addEventListener('change', function(e) {
-      menuState.plat = e.target.value;
-      renderSubOptions();
-      computeTotal();
-      saveDraft();
+      menuState.combo = e.target.value;
+      renderSubOptions(); computeTotal(); saveDraft();
     });
 
-    var txt = document.createElement('span');
-    txt.className = 'font-semibold text-sm leading-snug';
-    txt.textContent = opt.label;
+    var wrap = document.createElement('span');
+    wrap.className = 'min-w-0';
+    var nm = document.createElement('span');
+    nm.className = 'block font-semibold text-sm';
+    nm.textContent = COMBO_LABELS[id];
+    var ds = document.createElement('span');
+    ds.className = 'block text-xs text-ink/50 mt-0.5 leading-snug';
+    ds.textContent = COMBO_DESC[id];
+    wrap.appendChild(nm); wrap.appendChild(ds);
 
-    left.appendChild(radio);
-    left.appendChild(txt);
-    lbl.appendChild(left);
+    lbl.appendChild(radio); lbl.appendChild(wrap);
     grid.appendChild(lbl);
   });
 
   builder.appendChild(grid);
 
   var subBox = document.createElement('div');
-  subBox.id = 'subOptions';
-  subBox.className = 'mt-5 space-y-4';
+  subBox.id = 'subOptions'; subBox.className = 'mt-5 space-y-4';
   builder.appendChild(subBox);
 
-  renderSubOptions();
-  computeTotal();
+  renderSubOptions(); computeTotal();
 }
 
 function renderSubOptions() {
   var box = document.getElementById('subOptions');
   if (!box) return;
   box.innerHTML = '';
+  var c = menuState.combo;
 
-  var grid = document.createElement('div');
-  grid.className = 'grid sm:grid-cols-2 gap-3';
+  function row(cls) { var d = document.createElement('div'); d.className = cls || 'grid sm:grid-cols-2 gap-3'; return d; }
 
-  if (['filet','taouk','mix'].indexOf(menuState.plat) > -1) {
-    grid.appendChild(buildSubGroup('Accompagnement', 'accomp1', [
+  if (c === 'gp') {
+    var g = row('grid sm:grid-cols-3 gap-3');
+    g.appendChild(buildSubGroup('Votre brochette', 'gpPlat', [
+      ['filet','Brochette Filet'],['taouk','Taouk Poulet'],['mix','Brochette Mix'],
+    ], menuState.gpPlat));
+    g.appendChild(buildSubGroup('Accompagnement', 'gpAccomp', [
       ['frites','Frites'],['riz','Riz'],
-    ], menuState.accomp1));
-    grid.appendChild(buildSubGroup('Sauce', 'accomp2', [
+    ], menuState.gpAccomp));
+    g.appendChild(buildSubGroup('Sauce', 'gpSauce', [
       ['oignon','Sauce oignon'],['yassa','Sauce yassa'],
-    ], menuState.accomp2));
-    box.appendChild(grid);
+    ], menuState.gpSauce));
+    box.appendChild(g);
 
-  } else if (menuState.plat === 'snack') {
-    grid.appendChild(buildSubGroup('Base', 'snackBase', [
+  } else if (c === 'gc') {
+    var g1 = row();
+    g1.appendChild(buildSubGroup('Votre brochette', 'gcPlat', [
+      ['foie','Brochette Foie'],['kafta','Brochette Kafta'],
+      ['haousa','Brochette Haousa'],['banquette','Banquette Poulet'],
+    ], menuState.gcPlat));
+    var gcR = document.createElement('div'); gcR.className = 'space-y-3';
+    gcR.appendChild(buildSubGroup('Accompagnement', 'gcAccomp', [['frites','Frites'],['riz','Riz']], menuState.gcAccomp));
+    gcR.appendChild(buildSubGroup('Sauce', 'gcSauce', [['oignon','Sauce oignon'],['yassa','Sauce yassa']], menuState.gcSauce));
+    g1.appendChild(gcR);
+    box.appendChild(g1);
+    box.appendChild(buildSubGroup('Extra offert — dessert ou boisson', 'gcExtra', [
+      ['glace','Glace'],['popcorn','Pop Corn'],['crepe-sucree','Crêpe sucrée'],['gaufre-sucree','Gaufre sucrée'],
+      ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],['cafe','Café Nespresso'],
+    ], menuState.gcExtra));
+
+  } else if (c === 'sn') {
+    box.appendChild(buildSubGroup('Votre plat', 'snPlat', [
       ['burger-viande','Burger viande'],['burger-crispy','Burger crispy'],
       ['tacos-poulet','Tacos poulet'],['tacos-viande','Tacos viande'],['tacos-hotdog','Tacos hot dog'],
-    ], menuState.snackBase));
-    grid.appendChild(buildSubGroup('Boisson · frites incluses', 'snackDrink', [
-      ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],
-    ], menuState.snackDrink));
-    box.appendChild(grid);
+    ], menuState.snPlat));
+    box.appendChild(buildSubGroup('Complément', 'snComp', [
+      ['frites-boisson','Frites + Boisson'],['frites-dessert','Frites + Dessert'],['dessert-premium','Dessert premium'],
+    ], menuState.snComp));
+    if (menuState.snComp === 'frites-boisson') {
+      box.appendChild(buildSubGroup('Votre boisson', 'snBoisson', [
+        ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],['cafe','Café Nespresso'],
+      ], menuState.snBoisson));
+    } else if (menuState.snComp === 'frites-dessert') {
+      box.appendChild(buildSubGroup('Votre dessert', 'snDessert', [
+        ['glace','Glace'],['popcorn','Pop Corn'],['crepe-sucree','Crêpe sucrée'],['gaufre-sucree','Gaufre sucrée'],
+      ], menuState.snDessert));
+    } else if (menuState.snComp === 'dessert-premium') {
+      box.appendChild(buildSubGroup('Votre dessert', 'snPremium', [
+        ['crepe-nutella','Crêpe Nutella'],['gaufre-nutella','Gaufre Nutella'],['milk-shake','Milk Shake'],
+      ], menuState.snPremium));
+    }
 
-  } else if (menuState.plat === 'pizza') {
-    grid.appendChild(buildSubGroup('Pizza PM', 'pizzaBase', [
-      ['reine','Reine'],['margarite','Margarite'],['4fromages','4 Fromages'],['yendibi','Spéciale Yendi Bi'],
-    ], menuState.pizzaBase));
-    grid.appendChild(buildSubGroup('Complément', 'pizzaComp', [
-      ['frites','Frites'],['boisson','Boisson au choix'],
-    ], menuState.pizzaComp));
-    box.appendChild(grid);
+  } else if (c === 'nh') {
+    box.appendChild(buildSubGroup('Votre plat', 'nhPlat', [
+      ['nuggets','Nuggets (8 pièces)'],['hews','Hews (6 pièces)'],
+    ], menuState.nhPlat));
+    box.appendChild(buildSubGroup('Complément', 'nhComp', [
+      ['frites-boisson','Frites + Boisson'],['frites-dessert','Frites + Dessert'],['dessert-premium','Dessert premium'],
+    ], menuState.nhComp));
+    if (menuState.nhComp === 'frites-boisson') {
+      box.appendChild(buildSubGroup('Votre boisson', 'nhBoisson', [
+        ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],['cafe','Café Nespresso'],
+      ], menuState.nhBoisson));
+    } else if (menuState.nhComp === 'frites-dessert') {
+      box.appendChild(buildSubGroup('Votre dessert', 'nhDessert', [
+        ['glace','Glace'],['popcorn','Pop Corn'],['crepe-sucree','Crêpe sucrée'],['gaufre-sucree','Gaufre sucrée'],
+      ], menuState.nhDessert));
+    } else if (menuState.nhComp === 'dessert-premium') {
+      box.appendChild(buildSubGroup('Votre dessert', 'nhPremium', [
+        ['crepe-nutella','Crêpe Nutella'],['gaufre-nutella','Gaufre Nutella'],['milk-shake','Milk Shake'],
+      ], menuState.nhPremium));
+    }
+
+  } else if (c === 'pz') {
+    box.appendChild(buildSubGroup('Votre pizza', 'pzPlat', [
+      ['reine','Pizza Reine'],['yendibi','Yendi Bi'],['margarite','Margarite'],['4fromages','4 Fromages'],
+    ], menuState.pzPlat));
+    box.appendChild(buildSubGroup('Extra offert — dessert ou boisson', 'pzExtra', [
+      ['glace','Glace'],['popcorn','Pop Corn'],['crepe-sucree','Crêpe sucrée'],['gaufre-sucree','Gaufre sucrée'],
+      ['pressea','Canette Pressea'],['kirene','Kirène 1.5L'],['cafe','Café Nespresso'],
+    ], menuState.pzExtra));
   }
 
   box.querySelectorAll('input[type=radio]').forEach(function(r) {
     r.addEventListener('change', function(e) {
-      menuState[e.target.name] = e.target.value;
-      computeTotal();
-      saveDraft();
+      var field = e.target.name;
+      menuState[field] = e.target.value;
+      if (field === 'snComp') { menuState.snBoisson = ''; menuState.snDessert = ''; menuState.snPremium = ''; }
+      if (field === 'nhComp') { menuState.nhBoisson = ''; menuState.nhDessert = ''; menuState.nhPremium = ''; }
+      renderSubOptions(); computeTotal(); saveDraft();
     });
   });
 }
 
 function buildSubGroup(title, name, opts, current) {
   var col = document.createElement('div');
-
   var hdr = document.createElement('p');
   hdr.className = 'text-xs font-bold mb-2 text-ink/50';
   hdr.textContent = title;
   col.appendChild(hdr);
-
   var wrap = document.createElement('div');
   wrap.className = 'flex flex-wrap gap-2';
-
   opts.forEach(function(pair) {
-    var val = pair[0], text = pair[1];
     var lbl = document.createElement('label');
     lbl.className = [
       'border-2 border-ink/15 rounded-full px-3.5 py-1.5 text-xs font-semibold cursor-pointer',
       'has-[:checked]:bg-ink has-[:checked]:text-linen has-[:checked]:border-ink',
       'transition-all hover:border-ink/35',
     ].join(' ');
-
     var r = document.createElement('input');
-    r.type = 'radio';
-    r.name = name;
-    r.value = val;
-    r.className = 'sr-only';
-    if (val === current) r.checked = true;
-
+    r.type = 'radio'; r.name = name; r.value = pair[0]; r.className = 'sr-only';
+    if (pair[0] === current) r.checked = true;
     var sp = document.createElement('span');
-    sp.textContent = text;
-
-    lbl.appendChild(r);
-    lbl.appendChild(sp);
-    wrap.appendChild(lbl);
+    sp.textContent = pair[1];
+    lbl.appendChild(r); lbl.appendChild(sp); wrap.appendChild(lbl);
   });
-
   col.appendChild(wrap);
   return col;
 }
 
 function computeTotal() {
-  var total = 0, detail = '';
+  var c = menuState.combo, complete = false, detail = '';
 
-  if (['filet','taouk','mix'].indexOf(menuState.plat) > -1) {
-    total  = 5000;
-    detail = (PLAT_LABELS[menuState.plat]   || menuState.plat)
-           + ' — '
-           + (ACCOMP_LABELS[menuState.accomp1] || menuState.accomp1)
-           + ', '
-           + (SAUCE_LABELS[menuState.accomp2]  || menuState.accomp2);
-  } else if (menuState.plat === 'snack') {
-    total  = 5000;
-    detail = (SNACK_BASE_LBL[menuState.snackBase] || menuState.snackBase)
-           + ' + Frites + '
-           + (DRINK_LABELS[menuState.snackDrink]  || menuState.snackDrink);
-  } else if (menuState.plat === 'pizza') {
-    total  = 5000;
-    detail = (PIZZA_BASE_LBL[menuState.pizzaBase] || menuState.pizzaBase)
-           + ' + '
-           + (PIZZA_COMP_LBL[menuState.pizzaComp] || menuState.pizzaComp);
+  if (c === 'gp') {
+    complete = true;
+    detail = 'Grillade Premium — ' + (LBL[menuState.gpPlat]||menuState.gpPlat)
+           + ', ' + (LBL[menuState.gpAccomp]||menuState.gpAccomp)
+           + ', ' + (LBL[menuState.gpSauce]||menuState.gpSauce);
+  } else if (c === 'gc') {
+    complete = !!(menuState.gcPlat && menuState.gcAccomp && menuState.gcSauce && menuState.gcExtra);
+    detail = 'Grillade Classic — ' + (LBL[menuState.gcPlat]||menuState.gcPlat)
+           + ', ' + (LBL[menuState.gcAccomp]||menuState.gcAccomp)
+           + ', ' + (LBL[menuState.gcSauce]||menuState.gcSauce)
+           + ' + ' + (LBL[menuState.gcExtra]||menuState.gcExtra);
+  } else if (c === 'sn') {
+    var snSub = menuState.snComp==='frites-boisson' ? menuState.snBoisson
+              : menuState.snComp==='frites-dessert' ? menuState.snDessert
+              : menuState.snComp==='dessert-premium' ? menuState.snPremium : '';
+    complete = !!(menuState.snPlat && menuState.snComp && snSub);
+    var snExtra = menuState.snComp==='dessert-premium'
+      ? (LBL[snSub]||snSub) : 'Frites + '+(LBL[snSub]||snSub);
+    detail = 'Snacking — '+(LBL[menuState.snPlat]||menuState.snPlat)+', '+snExtra;
+  } else if (c === 'nh') {
+    var nhSub = menuState.nhComp==='frites-boisson' ? menuState.nhBoisson
+              : menuState.nhComp==='frites-dessert' ? menuState.nhDessert
+              : menuState.nhComp==='dessert-premium' ? menuState.nhPremium : '';
+    complete = !!(menuState.nhPlat && menuState.nhComp && nhSub);
+    var nhExtra = menuState.nhComp==='dessert-premium'
+      ? (LBL[nhSub]||nhSub) : 'Frites + '+(LBL[nhSub]||nhSub);
+    detail = 'Nuggets & Hews — '+(LBL[menuState.nhPlat]||menuState.nhPlat)+', '+nhExtra;
+  } else if (c === 'pz') {
+    complete = !!(menuState.pzPlat && menuState.pzExtra);
+    detail = 'Pizza PM — '+(LBL[menuState.pzPlat]||menuState.pzPlat)
+           + ' + '+(LBL[menuState.pzExtra]||menuState.pzExtra);
   }
 
-  window.__menuTotal  = total;
+  window.__menuTotal  = complete ? MENU_TARGET : 0;
   window.__menuDetail = detail;
 
   var affiche = document.getElementById('totalAffiche');
@@ -1826,18 +1876,18 @@ function computeTotal() {
   var msg     = document.getElementById('totalMsg');
   if (!affiche || !box || !msg) return;
 
-  if (total === MENU_TARGET) {
-    affiche.textContent    = '✓';
+  if (complete) {
+    affiche.textContent = '✓';
     if (label) label.textContent = 'Menu complet';
-    box.style.background   = 'rgba(47,77,58,.1)';
-    box.style.borderColor  = '#2F4D3A';
+    box.style.background  = 'rgba(47,77,58,.1)';
+    box.style.borderColor = '#2F4D3A';
     msg.textContent = '';
   } else {
-    affiche.textContent    = '○';
+    affiche.textContent = '○';
     if (label) label.textContent = 'Menu non complété';
-    box.style.background   = 'rgba(140,47,38,.08)';
-    box.style.borderColor  = '#8C2F26';
-    msg.textContent = total === 0 ? '' : 'Veuillez compléter votre sélection.';
+    box.style.background  = 'rgba(140,47,38,.08)';
+    box.style.borderColor = '#8C2F26';
+    msg.textContent = c ? 'Veuillez compléter votre sélection.' : '';
   }
 }
 renderMenu();
@@ -2464,8 +2514,11 @@ function clearError() {
         clearDraft();
         form.reset();
         Object.assign(menuState, {
-          plat:'filet', accomp1:'frites', accomp2:'oignon',
-          snackBase:'burger-viande', snackDrink:'pressea', pizzaBase:'reine', pizzaComp:'frites',
+          combo:'',
+          gpPlat:'filet', gpAccomp:'frites', gpSauce:'oignon', gcExtra:'',
+          snComp:'', snBoisson:'', snDessert:'', snPremium:'',
+          nhComp:'', nhBoisson:'', nhDessert:'', nhPremium:'',
+          pzExtra:'',
         });
         renderMenu();
         document.getElementById('blocAncien').classList.add('hidden');
